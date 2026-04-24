@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stellar Marketing Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+
+  :root {
+    --navy: #001846;
+    --white: #ffffff;
+    --warm: #f8f6f2;
+    --warm-dark: #ede9e2;
+    --cream: #faf5ec;
+    --mid-grey: #6b7280;
+    --light-grey: #e5e7eb;
+    --text: #111827;
+    --terra: #C4622D;
+    --dot-color: #c9bdb0;
+  }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== CUSTOM CURSOR ===== */
+  #cursor {
+    position: fixed; pointer-events: none; z-index: 9999;
+    font-size: 1.4rem; color: var(--terra);
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    will-change: transform, left, top;
+  }
+  .cursor-trail {
+    position: fixed; pointer-events: none; z-index: 9998;
+    font-size: 0.75rem; color: var(--terra);
+    transform: translate(-50%, -50%);
+    opacity: 0; transition: opacity 0.4s ease;
+    will-change: transform, left, top, opacity;
+  }
+
+  /* ===== GRAIN TEXTURE ===== */
+  .grain-bg { position: relative; }
+  .grain-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    pointer-events: none; z-index: 0; mix-blend-mode: multiply;
+  }
+  .grain-bg > * { position: relative; z-index: 1; }
+
+  /* ===== HIGHLIGHTS ===== */
+  .hl-white {
+    background: var(--white); color: var(--navy);
+    padding: 2px 10px 3px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    border-radius: 3px; display: inline;
+  }
+  .hl-terra {
+    background: var(--terra); color: var(--white);
+    padding: 1px 8px 2px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    border-radius: 2px;
+  }
+  .hl-navy {
+    background: var(--navy); color: var(--white);
+    padding: 1px 8px 2px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    border-radius: 2px;
+  }
+
+  /* ===== SPARKLE ===== */
+  .spark-word { position: relative; display: inline-block; }
+  .sw-star {
+    position: absolute; color: #e8a57a;
+    pointer-events: none; font-size: 14px; line-height: 1;
+  }
+  .sw-star.s1 { top: -14px; left: -10px;  animation: twinkle 2s ease-in-out infinite 0s; }
+  .sw-star.s2 { top: -10px; right: -12px; animation: twinkle 2s ease-in-out infinite 0.7s; font-size: 10px; }
+  .sw-star.s3 { bottom: -10px; right: -8px; animation: twinkle 2s ease-in-out infinite 1.3s; font-size: 11px; }
+  .sw-star.s4 { bottom: -8px; left: -8px; animation: twinkle 2s ease-in-out infinite 0.4s; font-size: 9px; }
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50%       { opacity: 0.3; transform: scale(0.6) rotate(25deg); }
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px; border-bottom: 1px solid var(--warm-dark);
+    background: var(--white); position: sticky; top: 0; z-index: 100;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--navy); text-decoration: none;
+  }
+  .btn {
+    background: transparent; color: var(--navy);
+    padding: 10px 24px; border-radius: 100px;
+    font-size: 14px; font-weight: 600; text-decoration: none; display: inline-block;
+    border: 2px solid var(--navy); font-family: inherit;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover { background: var(--navy); color: var(--white); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--white);
+    padding: 80px 60px 88px;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 80px;
+    align-items: start;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(38px, 5vw, 72px);
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+  }
+  .h1-line { display: block; }
+  .h1-l1 { margin-bottom: 0.5em; }
+  .h1-underline { text-decoration: underline; text-underline-offset: 5px; }
+
+  /* Bridge copy inside hero */
+  .hero-bridge {
+    margin-top: 40px;
+  }
+  .hero-bridge p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #4b5563;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .hero-bridge p:last-child { margin-bottom: 0; }
+  .hb-sf { }
+  .hb-close { }
+
+  /* Hero photo rectangle */
+  .hero-photo-rect {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: var(--warm-dark);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a7d6e;
+    font-size: 13px;
+    font-style: italic;
+    flex-shrink: 0;
+  }
+  .hero-photo-rect img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+  }
+  .hero-photo-inline {
+    display: inline-block;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 3px solid rgba(255,255,255,0.3);
+    vertical-align: middle;
+    margin: 0 16px -30px;
+    text-align: center;
+    line-height: 220px;
+    font-size: 11px; font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    overflow: hidden; flex-shrink: 0;
+    position: relative; z-index: 2;
+  }
+  .hero-photo-inline img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    border-radius: 50%;
+  }
+
+  /* EEK annotation */
+  .else-wrap { position: relative; display: inline-block; }
+  .eek-annotation {
+    position: absolute;
+    top: -68px; right: -10px;
+    font-family: 'Fraunces', serif;
+    font-style: italic; font-size: 65px;
+    color: #e8a57a;
+    transform: rotate(-12deg);
+    font-weight: 700;
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    animation: eek-bob 3s ease-in-out infinite;
+  }
+  @keyframes eek-bob {
+    0%, 100% { transform: rotate(-12deg) translateY(0); }
+    50% { transform: rotate(-10deg) translateY(-3px); }
+  }
+
+  /* ===== SECTION DIVIDER ===== */
+  .section-divider {
+    text-align: center; background: var(--warm);
+    color: var(--terra); font-size: 14px; letter-spacing: 10px;
+    padding: 4px 0 40px;
+  }
+
+
+  /* ===== PROOF STRIP ===== */
+  .proof-strip {
+    background: var(--white);
+    padding: 52px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .proof-card {
+    background: var(--warm);
+    border-radius: 12px; padding: 28px;
+    border: 1px solid var(--light-grey);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    display: flex; flex-direction: column;
+  }
+  .proof-photo {
+    width: 80px; height: 80px; border-radius: 50%;
+    overflow: hidden; margin-bottom: 16px; flex-shrink: 0;
+    background: var(--warm-dark);
+  }
+  .proof-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .proof-stars {
+    color: #FBBC04; font-size: 15px;
+    letter-spacing: 2px; margin-bottom: 12px; display: block;
+  }
+  .proof-quote-text {
+    font-size: 16px; line-height: 1.65;
+    color: #374151; font-style: italic; margin-bottom: 16px; flex: 1;
+  }
+  .proof-quote-text strong { color: var(--navy); font-style: normal; }
+  .proof-reviewer { display: flex; flex-direction: column; gap: 2px; }
+  .proof-reviewer-name { font-size: 13px; font-weight: 700; color: var(--navy); display: block; }
+  .proof-reviewer-biz  { font-size: 12px; color: var(--mid-grey); }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 88px 60px; }
+  section.alt { background: var(--warm); }
+  section.dark { background: var(--navy); }
+  .inner { max-width: 780px; margin: 0 auto; }
+  .inner.wide { max-width: 1080px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 12px; display: block; text-align: center;
+  }
+  .eyebrow.light { color: #e8a57a; }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3.8vw, 46px);
+    font-weight: 600; color: var(--navy);
+    line-height: 1.15; letter-spacing: 0; margin-bottom: 20px;
+    text-align: center;
+  }
+  h2.white { color: var(--white); }
+  .prose { font-size: 18px; line-height: 1.75; color: #374151; max-width: 620px; margin: 0 auto; }
+  .prose p { margin-bottom: 16px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ===== PROBLEM ===== */
+  .problem-section { overflow: hidden; text-align: center; }
+  .problem-pull {
+    background: var(--navy); padding: 80px 60px 72px; text-align: center; position: relative;
+  }
+  .problem-pull-quote {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(26px, 3.8vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2; letter-spacing: -0.02em;
+    max-width: 900px; margin: 0 auto;
+  }
+  .pull-line { display: block; }
+  .pull-line-1 {
+    animation: fadeUp 0.9s ease both 0.1s;
+    font-size: clamp(18px, 2.2vw, 26px); font-weight: 500;
+    opacity: 0.8; margin-bottom: 20px;
+  }
+  .pull-line-3 { animation: fadeUp 0.9s ease both 0.5s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .pull-em { color: #e8a57a; }
+
+  /* AI CYCLING TEXT */
+  #ai-cycle-text {
+    display: inline-block;
+    color: #e8a57a;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-style: italic;
+  }
+  #ai-cycle-text.cycling-out { opacity: 0; transform: translateY(-10px); }
+
+  /* "DIFFERENT" letter-fall animation */
+  .diff-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  .diff-letter.dropped {
+    animation: letterFall 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @keyframes letterFall {
+    from { opacity: 0; transform: translateY(-50px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .problem-body {
+    padding: 64px 60px; text-align: center;
+    max-width: 820px; margin: 0 auto; position: relative;
+  }
+
+  /* ELEPHANT -side annotation */
+  .elephant-annotation-wrap {
+    display: flex; gap: 28px; align-items: flex-start; justify-content: center;
+  }
+  .elephant-side-label {
+    display: flex; flex-direction: column; align-items: flex-end;
+    min-width: 160px; max-width: 180px; flex-shrink: 0; gap: 10px;
+  }
+  .elephant-label-text {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 20px; color: var(--terra);
+    transform: rotate(-6deg); text-align: right;
+    line-height: 1.3; font-weight: 600; display: block;
+  }
+  .eleph-arrow {
+    display: block; font-size: 24px; text-align: right;
+    margin-top: 4px; font-style: normal;
+  }
+  .elephant-content { flex: 1; max-width: 520px; text-align: left; }
+  .elephant-row {
+    display: flex; align-items: flex-end; justify-content: flex-end;
+    gap: 10px;
+  }
+  .big-elephant {
+    font-size: 90px; line-height: 1;
+    display: block;
+    animation: elephant-sway 3.5s ease-in-out infinite;
+  }
+  @keyframes elephant-sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+  }
+  .elephant-bubble-big {
+    background: var(--white);
+    border: 2px solid var(--light-grey);
+    border-radius: 20px 20px 20px 4px;
+    padding: 14px 20px;
+    font-size: 16px; font-weight: 600;
+    color: var(--navy);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    max-width: 240px;
+    line-height: 1.4;
+  }
+  .elephant-sub {
+    display: block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: var(--mid-grey);
+    font-weight: 500;
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+  .problem-body-right { font-size: 16px; line-height: 1.8; color: #374151; text-align: center; }
+  .problem-body-right p { margin-bottom: 18px; }
+  .problem-body-right p:last-child { margin-bottom: 0; }
+  .problem-body-right strong { color: var(--navy); }
+
+  /* ===== METHOD ===== */
+  .method-section {
+    background: var(--navy); padding: 88px 60px; text-align: center;
+    position: relative;
+  }
+  .method-sparkle {
+    position: absolute; color: #e8a57a;
+    pointer-events: none; animation: twinkle 2.2s ease-in-out infinite;
+  }
+  .ms1 { top: -20px; left: -20px; font-size: 20px; animation-delay: 0s; }
+  .ms2 { top: -14px; right: -22px; font-size: 14px; animation-delay: 0.8s; }
+  .ms3 { bottom: -16px; right: -18px; font-size: 18px; animation-delay: 1.4s; }
+  .ms4 { bottom: -12px; left: -14px; font-size: 12px; animation-delay: 0.3s; }
+  .method-h2-wrap { display: inline-block; position: relative; margin-bottom: 12px; }
+  .method-prose {
+    font-size: 18px; line-height: 1.75; color: var(--white); font-weight: 600;
+    max-width: 600px; margin: 0 auto 8px;
+  }
+  .lets-cook {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(22px, 2.5vw, 30px); color: var(--white);
+    margin: 20px 0 36px; font-weight: 600; display: block;
+  }
+
+  /* ===== METHOD CARD ===== */
+  .method-card {
+    background: var(--white); border-radius: 16px;
+    max-width: 640px; margin: 0 auto; padding: 40px 48px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18); text-align: left;
+  }
+  .method-step { display: flex; gap: 20px; align-items: flex-start; }
+  .ms-num {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 48px; font-weight: 700;
+    color: var(--terra); opacity: 0.45; line-height: 1;
+    flex-shrink: 0; width: 30px; margin-top: -4px;
+  }
+  .ms-name {
+    font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px;
+  }
+  .ms-desc { font-size: 15px; line-height: 1.7; color: #4b5563; }
+  .ms-separator {
+    text-align: center; color: #e8a57a;
+    font-size: 13px; letter-spacing: 8px;
+    margin: 18px 0;
+  }
+
+  /* ===== RECIPE CARD (legacy, unused) ===== */
+  .recipe-step-num {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 44px; font-weight: 700;
+    color: var(--terra); opacity: 0.5; line-height: 1;
+    flex-shrink: 0; width: 32px; margin-top: -2px;
+  }
+  .recipe-step-body { text-align: left; }
+  .recipe-step-verb {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 5px; display: block; text-align: left;
+  }
+  .recipe-step-name {
+    font-size: 16px; font-weight: 700; color: var(--navy);
+    margin-bottom: 7px; text-align: left;
+  }
+  .recipe-step-desc { font-size: 16px; line-height: 1.7; color: #4b5563; text-align: left; }
+  .recipe-footer-note {
+    margin-top: 24px; padding-top: 20px; border-top: 1px solid #ddd0bb;
+    font-size: 14px; font-style: italic; color: #8a7060; text-align: center;
+  }
+
+  /* ===== SLIDER ===== */
+  .slider-section { padding: 88px 60px; background: var(--warm); text-align: center; }
+  .slider-title {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 600; color: var(--navy);
+    line-height: 1.05; letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .slider-sub {
+    font-size: 18px; color: #6b7280; margin-bottom: 36px;
+  }
+  .morph-wrap { max-width: 680px; margin: 0 auto; }
+  .morph-slider-row { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
+  .morph-state-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    flex-shrink: 0; width: 50px;
+  }
+  .morph-state-label.lbl-before { color: #9ca3af; text-align: right; }
+  .morph-state-label.lbl-after  { color: #C17B50; text-align: left; }
+  input[type="range"].morph-range {
+    flex: 1; -webkit-appearance: none;
+    height: 4px; background: linear-gradient(to right, #d1cec9 0%, var(--navy) 100%);
+    border-radius: 4px; outline: none; cursor: pointer;
+  }
+  input[type="range"].morph-range::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    cursor: grab; border: 3px solid white;
+  }
+  input[type="range"].morph-range:active::-webkit-slider-thumb { cursor: grabbing; }
+  .morph-hint { text-align: center; margin: 8px 0 20px; font-size: 12px; color: var(--mid-grey); font-style: italic; }
+  .morph-col-headers {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-radius: 10px 10px 0 0; overflow: hidden;
+    border: 1px solid var(--light-grey); border-bottom: none;
+  }
+  .morph-col-head {
+    padding: 12px 20px; font-size: 18px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .head-before { background: #edeae5; color: #6b7280; }
+  .head-after  { background: #faf5ec; color: #C17B50; border-left: 1px solid var(--light-grey); }
+  .head-emoji  { font-size: 18px; }
+  .morph-pairs {
+    display: flex; flex-direction: column;
+    border-radius: 0 0 10px 10px; overflow: hidden;
+    border: 1px solid var(--light-grey); border-top: none;
+  }
+  .morph-pair {
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; border-bottom: 1px solid var(--light-grey);
+  }
+  .morph-pair:last-child { border-bottom: none; }
+  .morph-before-word {
+    padding: 14px 16px 14px 20px; font-size: 18px; line-height: 1.45;
+    background: #edeae5; color: #6b7280; position: relative;
+    transition: color 0.35s ease, text-decoration-color 0.35s ease;
+    text-align: left;
+  }
+  .morph-after-word {
+    padding: 14px 20px 14px 16px; font-size: 18px; font-weight: 500;
+    line-height: 1.45; background: #faf5ec; color: #a07b5a;
+    border-left: 2px solid #ddd0bb;
+    transition: color 0.35s ease, font-weight 0.35s ease;
+    text-align: left;
+  }
+  .morph-divider-bar {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+    background: #d4d0ca; transform: translateX(-50%);
+    pointer-events: none; transition: background 0.35s;
+  }
+
+  /* ===== WORKING WITH ME ===== */
+  .wtm-section { padding: 88px 60px; text-align: center; background: var(--cream); }
+  .wtm-section h2 { margin-bottom: 40px; }
+  .wtm-intro { font-size: 18px; line-height: 1.75; color: #374151; max-width: 820px; margin: 0 auto 24px; }
+  .wtm-intro p { margin-bottom: 14px; }
+  .wtm-intro p:last-child { margin-bottom: 0; }
+  .wtm-small-note {
+    font-size: 18px; color: #374151; font-style: italic;
+    margin: 0 auto 28px; max-width: 820px; line-height: 1.75;
+  }
+  .video-placeholder {
+    background: var(--warm-dark); border: 2px dashed #c4b8a8;
+    border-radius: 12px; height: 200px; max-width: 560px; margin: 0 auto;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; color: #8a7d6e; gap: 8px;
+  }
+  .video-placeholder span { font-size: 32px; }
+  .video-placeholder p { font-size: 13px; font-style: italic; }
+
+  /* ===== WTM PHOTO ===== */
+  .wtm-photo {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto 28px;
+    border: 3px solid var(--warm-dark);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .wtm-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+  }
+
+  /* ===== STATEMENT SECTION ===== */
+  .statement-section {
+    background: var(--navy); color: var(--white);
+    padding: 80px 60px; text-align: center;
+  }
+  .statement-section p {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 600; line-height: 1.35;
+    max-width: 760px; margin: 0 auto;
+    color: var(--white);
+  }
+  .statement-section p + p { margin-top: 16px; }
+  .hl-terra-inline {
+    background: var(--white); color: var(--navy);
+    padding: 2px 10px 4px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    border-radius: 3px;
+  }
+
+  /* ===== OFFERS INTRO ===== */
+  .offers-intro {
+    font-size: 18px; color: var(--mid-grey); margin: 16px auto 40px;
+    max-width: 520px;
+  }
+  .offer-arrow {
+    text-align: center; font-size: 28px; color: var(--terra);
+    margin: 8px 0; line-height: 1;
+  }
+
+  /* ===== OFFERS ===== */
+  .offers-section { padding: 88px 60px; background: var(--warm); text-align: center; }
+  .offers-stack {
+    margin-top: 48px; display: flex; flex-direction: column; gap: 20px;
+    max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .offer-card {
+    background: var(--white);
+    border-radius: 24px;
+    border: 1.5px solid var(--light-grey);
+    padding: 40px 44px;
+    box-shadow: 0 4px 24px rgba(0,24,70,0.07);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    overflow: visible;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .offer-card:hover {
+    box-shadow: 0 8px 40px rgba(0,24,70,0.12);
+    transform: translateY(-2px);
+  }
+  .card-spark {
+    position: absolute; color: #e8a57a; font-size: 16px;
+    pointer-events: none; animation: twinkle 2s ease-in-out infinite; z-index: 2;
+  }
+  .cs1 { top: -12px; left: 20px; font-size: 18px; animation-delay: 0s; }
+  .cs2 { top: -8px; right: 40px; font-size: 12px; animation-delay: 0.6s; }
+  .cs3 { bottom: -10px; right: 24px; font-size: 15px; animation-delay: 1.2s; }
+  .cs4 { bottom: -6px; left: 60px; font-size: 10px; animation-delay: 0.3s; }
+  .offer-content h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 600; color: var(--navy);
+    margin-bottom: 12px; line-height: 1.2; letter-spacing: 0;
+  }
+  .offer-content p { font-size: 18px; line-height: 1.75; color: #4b5563; margin-bottom: 8px; }
+  .offer-content p:last-of-type { margin-bottom: 0; }
+  .offer-right {
+    text-align: right; display: flex;
+    flex-direction: column; align-items: flex-end;
+    gap: 12px; min-width: 150px; flex-shrink: 0;
+  }
+  .offer-price { font-size: 26px; font-weight: 700; color: var(--terra); letter-spacing: -0.02em; white-space: nowrap; }
+  .offer-cta {
+    display: inline-block; background: var(--navy); color: var(--white);
+    text-align: center; padding: 12px 22px; border-radius: 100px;
+    font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;
+  }
+  .offers-reassurance {
+    font-size: 16px; color: var(--mid-grey); font-style: italic;
+    text-align: center; margin-top: 36px;
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews-section { padding: 80px 0; overflow: hidden; background: var(--white); }
+  .reviews-section-head { text-align: center; padding: 0 60px 40px; }
+  .reviews-marquee-wrap {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+  .reviews-marquee-track {
+    display: flex; gap: 20px; width: max-content; padding: 0 10px;
+    animation: reviewsScroll 50s linear infinite;
+  }
+  .reviews-marquee-track:hover { animation-play-state: paused; }
+  @keyframes reviewsScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .review-card {
+    width: 380px; flex-shrink: 0; background: var(--warm);
+    border-radius: 12px; padding: 28px;
+    border: 1px solid var(--light-grey);
+    display: flex; flex-direction: column;
+  }
+  .review-header { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 16px; }
+  .reviewer-photo {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--warm-dark); border: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: #8a7d6e; flex-shrink: 0; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .reviewer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .reviewer-info strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .reviewer-info span  { font-size: 12px; color: var(--mid-grey); }
+  .review-quote { font-size: 16px; line-height: 1.7; color: #374151; font-style: italic; }
+  .review-quote strong { color: var(--navy); font-style: normal; }
+
+  /* ===== BOTTOM CTA -WhatsApp form ===== */
+  .bottom-cta { background: var(--navy); padding: 96px 60px; text-align: center; }
+  .bottom-cta h2 {
+    color: var(--white);
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 700; line-height: 1.0;
+    letter-spacing: -0.02em; margin-bottom: 16px;
+  }
+  .bottom-cta-sub {
+    font-size: 18px; color: var(--white);
+    margin-bottom: 44px; font-weight: 700;
+  }
+  .wa-form { max-width: 480px; margin: 0 auto; }
+  .wa-label {
+    font-size: 15px; color: rgba(255,255,255,0.75);
+    margin-bottom: 16px; font-weight: 500;
+  }
+  .wa-input-row {
+    display: flex; gap: 0;
+    border-radius: 100px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  }
+  .wa-input {
+    flex: 1; border: none; outline: none;
+    padding: 16px 24px; font-size: 16px;
+    font-family: inherit; background: transparent;
+    color: var(--text);
+  }
+  .wa-input::placeholder { color: #9ca3af; }
+  .wa-btn {
+    background: #25D366; color: var(--white);
+    border: none; padding: 16px 28px;
+    font-size: 16px; font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+    border-radius: 0 100px 100px 0;
+  }
+  .wa-btn:hover { background: #1db954; cursor: pointer; }
+  .wa-btn-icon { font-size: 18px; }
+  .wa-sub {
+    margin-top: 16px; font-size: 17px; color: var(--white); font-weight: 700;
+  }
+  .wa-sub a { color: var(--white); text-decoration: underline; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 32px 60px; border-top: 1px solid var(--warm-dark);
+    background: var(--white);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p { font-size: 15px; color: var(--mid-grey); margin-top: 6px; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 15px; color: var(--mid-grey); text-decoration: none; }
+  .footer-links a:hover { color: var(--navy); }
+
+</style>
+</head>
+<body>
+
+<div id="cursor">✦</div>
+
+<!-- NAV -->
+<nav>
+  <span class="wordmark">Sarah Hetherington</span>
+  <a href="#contact" class="btn">Chat with me</a>
+</nav>
+
+<!-- HERO + BRIDGE combined -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>
+        <span class="h1-line h1-l1">I make your audience think...</span>
+        <span class="h1-line">"Wow. I <em>have</em> to work with <span class="h1-underline">her</span>."</span>
+      </h1>
+      <div class="hero-bridge">
+        <p>Your clients are coming in… but they're not always the right ones, and there's not always enough.</p>
+        <p class="hb-sf">Sound familiar?</p>
+        <p>It often comes down to the same thing: people just can't see why you're the one.</p>
+        <p class="hb-close"><strong>But that's where I come in.</strong></p>
+      </div>
+    </div>
+    <div class="hero-photo-rect">
+      <img src="sarah-photo.jpg" alt="Sarah Hetherington" />
+    </div>
+  </div>
+</div>
+
+<!-- WORKING WITH ME -->
+<div class="wtm-section" id="how-i-work">
+  <h2>I help women business owners like you become the one they can't ignore.</h2>
+  <div class="wtm-intro">
+    <p>I'm Sarah, but you can call me your marketing fairy godmother. 🧚</p>
+  </div>
+  <div class="wtm-intro">
+    <p>When you think about doing your marketing, it's easy to start with the end result. A new social media strategy, a snazzy newsletter or a website that looks great, but could be any other business out there.</p>
+    <p>I start at the core.</p>
+    <p>Because until you're clear on what makes you different, really clear, your marketing might look the part, but it doesn't necessarily do the job - getting you the clients and revenue you want.</p>
+    <p>It's not that you're not trying or haven't got a brilliant business. It's that nobody's helped you figure out your 'gold dust' first (i.e. why you over anyone else). That's what I do.</p>
+  </div>
+  <div class="video-placeholder">
+    <span>▶</span>
+    <p>[ Video from Sarah goes here ]</p>
+  </div>
+  <p class="wtm-small-note">I work with a small number of clients at a time, on purpose. And I'm honest about who that's for. The women I work best with aren't just trying to get more clients - they genuinely care about doing right by the ones they have. That comes through in your marketing, and it's what makes you the standout choice.</p>
+</div>
+
+<!-- STATEMENT -Clients choosing you -->
+<div class="statement-section grain-bg">
+  <p>Clients aren't just buying your service. <span class="hl-terra-inline">They're choosing you.</span></p>
+  <p>And it needs to be obvious you're the <span class="hl-terra-inline">only one for them.</span></p>
+</div>
+
+<!-- PROOF STRIP -Google review style -->
+<div class="proof-strip">
+  <div class="proof-card">
+    <div class="proof-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div>
+    <span class="proof-stars">★★★★★</span>
+    <p class="proof-quote-text">"<strong>150% month-on-month increase in enquiries</strong> and several new clients happy to join a 2+ month waiting list purely from reading my website."</p>
+    <div class="proof-reviewer">
+      <span class="proof-reviewer-name">Pippa</span>
+      <span class="proof-reviewer-biz">Pippa's Pooches</span>
+    </div>
+  </div>
+  <div class="proof-card">
+    <div class="proof-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie & Helen"></div>
+    <span class="proof-stars">★★★★★</span>
+    <p class="proof-quote-text">"She <strong>captured our work ethic and personalities perfectly.</strong> From the very first conversation, she completely understood what we wanted."</p>
+    <div class="proof-reviewer">
+      <span class="proof-reviewer-name">Katie & Helen</span>
+      <span class="proof-reviewer-biz">K&H Mortgages</span>
+    </div>
+  </div>
+  <div class="proof-card">
+    <div class="proof-photo"><img src="https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg" alt="Laura"></div>
+    <span class="proof-stars">★★★★★</span>
+    <p class="proof-quote-text">"A website that <strong>feels like a true reflection of me.</strong> I'm so proud of it, and I can't thank Sarah enough."</p>
+    <div class="proof-reviewer">
+      <span class="proof-reviewer-name">Laura</span>
+      <span class="proof-reviewer-biz">Laura Heslop Therapy</span>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SLIDER -->
+<div class="slider-section">
+  <h2 class="slider-title">From invisible to inevitable.</h2>
+  <p class="slider-sub">Where you might be right now, and where my clients can end up.</p>
+  <div class="morph-wrap">
+    <div class="morph-slider-row">
+      <span class="morph-state-label lbl-before">Before</span>
+      <input type="range" class="morph-range" id="morphRange" min="0" max="100" value="0">
+      <span class="morph-state-label lbl-after">After</span>
+    </div>
+    <p class="morph-hint">drag the slider to watch things change ✨</p>
+    <div class="morph-col-headers">
+      <div class="morph-col-head head-before">Right now</div>
+      <div class="morph-col-head head-after">Working with me</div>
+    </div>
+    <div class="morph-pairs">
+      <div class="morph-pair">
+        <div class="morph-before-word" id="mb0">Posting content but getting nothing back</div>
+        <div class="morph-divider-bar"></div>
+        <div class="morph-after-word" id="ma0">Having a killer online presence</div>
+      </div>
+      <div class="morph-pair">
+        <div class="morph-before-word" id="mb1">Attracting the wrong clients (or none)</div>
+        <div class="morph-divider-bar"></div>
+        <div class="morph-after-word" id="ma1">Turning away work that isn't right for you</div>
+      </div>
+      <div class="morph-pair">
+        <div class="morph-before-word" id="mb2">Can't explain your price point</div>
+        <div class="morph-divider-bar"></div>
+        <div class="morph-after-word" id="ma2">Charging what you're worth with confidence</div>
+      </div>
+      <div class="morph-pair">
+        <div class="morph-before-word" id="mb3">Looking like everyone else in your field</div>
+        <div class="morph-divider-bar"></div>
+        <div class="morph-after-word" id="ma3">The obvious choice to the clients you actually want</div>
+      </div>
+      <div class="morph-pair">
+        <div class="morph-before-word" id="mb4">Dreading doing your own marketing</div>
+        <div class="morph-divider-bar"></div>
+        <div class="morph-after-word" id="ma4">Proud of your brand</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFERS -->
+<div class="offers-section">
+  <h2>Here's how I can help you.</h2>
+  <div class="offers-stack">
+
+    <div class="offer-card">
+      <span class="card-spark cs1">✦</span>
+      <span class="card-spark cs2">✶</span>
+      <span class="card-spark cs3">✦</span>
+      <span class="card-spark cs4">✶</span>
+      <div class="offer-content">
+        <h3>The Marketing MOT</h3>
+        <p>It starts with a proper conversation -just the two of us. Not about tactics or quick fixes, but about you, your business and where you actually want it to take you. It's the kind of chat where you end up saying things out loud that you might never have put into words before.</p>
+        <p>Most people would listen to you talk about your business and just take it at face value. But that's not me. My brain is always picking things out. The moment you mention something almost accidentally, or the way a smile appears when you talk about a certain type of client. That's your gold dust. And most of the time, it's already there -you just haven't realised it yet.</p>
+        <p>From there, you get a fresh pair of eyes on everything you do to promote your business. Your website, your social media, how you're coming across. You'll find out whether the thing that makes you different is actually showing up -and if it isn't, you'll know exactly what needs to change.</p>
+        <p>You'll walk away with a clear, written guide to come back to every time you sit down to write, post, or make any decision about promoting yourself. No more staring-at-a-blank-page moments.</p>
+        <p>Take it and run. Or we'll use it as the starting point for working together -the £495 comes off if you do.</p>
+        <p><em>Ready to find your gold dust? Let's have a chat.</em></p>
+      </div>
+      <div class="offer-right">
+        <div class="offer-price">£495</div>
+      </div>
+    </div>
+
+    <div class="offer-arrow">↓</div>
+
+    <div class="offer-card">
+      <span class="card-spark cs1" style="animation-delay:0.2s">✦</span>
+      <span class="card-spark cs2" style="animation-delay:0.9s">✶</span>
+      <span class="card-spark cs3" style="animation-delay:1.6s">✦</span>
+      <span class="card-spark cs4" style="animation-delay:0.5s">✶</span>
+      <div class="offer-content">
+        <h3>Built to Be Booked</h3>
+        <p>This is for you if your business is ticking along… the referrals are coming in, you're posting online occasionally -but when the right people do find you, nothing you're doing is making them think "she's the one."</p>
+        <p>We start the same way as The Marketing MOT. An in-depth conversation about you, your business and where you want it to take you. From there you get an honest picture of what's getting in the way.</p>
+        <p>Then I get to work. You might end up with a website that has people convinced you're the right person before they've even got in touch. Social media that brings people to you, rather than you constantly chasing them -or all of it. It depends entirely on what you need.</p>
+        <p>The goal is for the right people to find you and arrive knowing you're the one. Less back and forth, less convincing needed -just enquiries from people who are ready to say yes.</p>
+        <p style="font-size:14px;color:var(--mid-grey);font-style:italic;margin-top:8px;">Pricing is based on what we decide together -it could be a one-off project or an ongoing arrangement. Either way, the first conversation is just about figuring out what that looks like for you, with no obligation.</p>
+        <p><em>If this sounds like you, get in touch.</em></p>
+      </div>
+      <div class="offer-right">
+        <div class="offer-price" style="font-size:20px;">Let's talk</div>
+      </div>
+    </div>
+
+  </div>
+  <p class="offers-reassurance">I'm not expecting you to know which is right for you. We can have a big old chat before figuring out the right option.</p>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews-section" id="kind-words">
+  <div class="reviews-section-head">
+    <h2>In their words.</h2>
+    <p style="font-size:16px;color:var(--mid-grey);">Hover to pause ✋</p>
+  </div>
+  <div class="reviews-marquee-wrap">
+    <div class="reviews-marquee-track">
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg" alt="Laura"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
+        <p class="review-quote">"Sarah really listened, not just to what I wanted the site to look like, but <strong>to who I am.</strong> She created a website that feels like a true reflection of me. I'm so proud of it."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
+        <p class="review-quote">"<strong>150% month-on-month increase in enquiries</strong> since launch, and several new clients happy to join a 2+ month waiting list purely on the basis of reading my website."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/YjBCTY36/ITC-Tutor-Claire.jpg" alt="Claire"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
+        <p class="review-quote">"She changed things in a way <strong>I had not even considered.</strong> We've had way more interest and a huge increase in online bookings."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie & Helen"></div><div class="reviewer-info"><strong>Katie & Helen</strong><span>K and H Mortgages</span></div></div>
+        <p class="review-quote">"From our first interaction we knew she completely understood us. She has <strong>captured our work ethic and personalities perfectly.</strong> Cannot recommend her enough."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/kgd2H31L/WCA-About-Helen-and-Arnold.jpg" alt="Helen"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
+        <p class="review-quote">"It's only been a couple of weeks and I'm <strong>already getting more traffic and enquiries.</strong> It felt so nice knowing my website was in safe hands."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/h4zNGfcP/adele-cross-aesthetics-nurse.png" alt="Adele"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
+        <p class="review-quote">"She took the time to truly understand my business goals, and delivered something that <strong>truly reflected them.</strong>"</p>
+      </div>
+      <!-- duplicate for infinite loop -->
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg" alt="Laura"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
+        <p class="review-quote">"Sarah really listened, not just to what I wanted the site to look like, but <strong>to who I am.</strong> She created a website that feels like a true reflection of me. I'm so proud of it."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
+        <p class="review-quote">"<strong>150% month-on-month increase in enquiries</strong> since launch, and several new clients happy to join a 2+ month waiting list purely on the basis of reading my website."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/YjBCTY36/ITC-Tutor-Claire.jpg" alt="Claire"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
+        <p class="review-quote">"She changed things in a way <strong>I had not even considered.</strong> We've had way more interest and a huge increase in online bookings."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie & Helen"></div><div class="reviewer-info"><strong>Katie & Helen</strong><span>K and H Mortgages</span></div></div>
+        <p class="review-quote">"From our first interaction we knew she completely understood us. She has <strong>captured our work ethic and personalities perfectly.</strong> Cannot recommend her enough."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/kgd2H31L/WCA-About-Helen-and-Arnold.jpg" alt="Helen"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
+        <p class="review-quote">"It's only been a couple of weeks and I'm <strong>already getting more traffic and enquiries.</strong> It felt so nice knowing my website was in safe hands."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/h4zNGfcP/adele-cross-aesthetics-nurse.png" alt="Adele"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
+        <p class="review-quote">"She took the time to truly understand my business goals, and delivered something that <strong>truly reflected them.</strong>"</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -WhatsApp form -->
+<div class="bottom-cta" id="contact">
+  <h2>Let's make you inevitable.</h2>
+  <p class="bottom-cta-sub" style="margin-bottom:32px;">All you need to do is put your name in. I'll take it from there.</p>
+  <div class="wa-form">
+    <div class="wa-input-row">
+      <input type="text" id="wa-name" class="wa-input" placeholder="Your name..." autocomplete="given-name" />
+      <button class="wa-btn" onclick="openWhatsApp()">
+        <span class="wa-btn-icon">💬</span> WhatsApp me
+      </button>
+    </div>
+    <p class="wa-sub">Or drop me an email: <a href="mailto:sarah@stellarmarketingstudio.co.uk">sarah@stellarmarketingstudio.co.uk</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="wordmark" style="font-size:15px;">Sarah Hetherington</div>
+    <p>© 2026 Stellar Marketing Studio. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#how-i-work">How I work</a>
+    <a href="#kind-words">Kind words</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FORM JS -->
+<script>
+function openWhatsApp() {
+  const name = document.getElementById('wa-name').value.trim() || 'there';
+  const msg = encodeURIComponent('Hi Sarah! I\'m ' + name + ', I found you through your website and I\'d love to chat about working together. 🌟');
+  window.open('https://wa.me/447700000000?text=' + msg, '_blank');
+}
+document.getElementById('wa-name').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') openWhatsApp();
+});
+</script>
+
+<!-- AI CYCLING TEXT JS -->
+<script>
+(function() {
+  const el = document.getElementById('ai-cycle-text');
+  const phrases = [
+    'look like everyone else in your field.',
+    'attract the wrong clients.',
+    'undercharge.',
+  ];
+  let i = 0;
+  function cycle() {
+    el.classList.add('cycling-out');
+    setTimeout(function() {
+      i = (i + 1) % phrases.length;
+      el.textContent = phrases[i];
+      el.classList.remove('cycling-out');
+    }, 320);
+  }
+  setTimeout(function() {
+    setInterval(cycle, 3800);
+  }, 2500);
+})();
+</script>
+
+
+<!-- MORPH SLIDER JS -->
+<script>
+(function() {
+  var range = document.getElementById('morphRange');
+  var count = 5;
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function lerpRGB(a, b, t) {
+    return 'rgb(' + Math.round(lerp(a[0],b[0],t)) + ',' + Math.round(lerp(a[1],b[1],t)) + ',' + Math.round(lerp(a[2],b[2],t)) + ')';
+  }
+  function applyMorph(val) {
+    var t = val / 100;
+    for (var i = 0; i < count; i++) {
+      var before = document.getElementById('mb' + i);
+      var after  = document.getElementById('ma' + i);
+      var bar    = before.nextElementSibling;
+      before.style.color = lerpRGB([107,114,128],[185,178,168], t);
+      before.style.textDecoration = t > 0.1 ? 'line-through' : 'none';
+      before.style.textDecorationColor = 'rgba(180,150,150,' + Math.min(1, t * 2.5) + ')';
+      after.style.color = lerpRGB([160,123,90],[0,24,70], Math.min(1, t * 1.4));
+      after.style.fontWeight = t > 0.6 ? '700' : t > 0.3 ? '600' : '500';
+      bar.style.background = lerpRGB([212,208,187],[0,24,70], t);
+    }
+  }
+  range.addEventListener('input', function() { applyMorph(this.value); });
+  applyMorph(0);
+})();
+</script>
+
+<!-- CURSOR JS -->
+<script>
+var cursorEl = document.getElementById('cursor');
+var NUM_TRAIL = 10;
+var trailEls = [];
+for (var i = 0; i < NUM_TRAIL; i++) {
+  var el = document.createElement('div');
+  el.className = 'cursor-trail';
+  el.textContent = '✦';
+  document.body.appendChild(el);
+  trailEls.push({ el: el, x: -100, y: -100 });
+}
+var mouseX = -100, mouseY = -100;
+var histArr = [];
+for (var j = 0; j < NUM_TRAIL + 1; j++) histArr.push({ x: -100, y: -100 });
+document.addEventListener('mousemove', function(e) {
+  mouseX = e.clientX; mouseY = e.clientY;
+  cursorEl.style.left = mouseX + 'px';
+  cursorEl.style.top = mouseY + 'px';
+});
+var last = 0;
+function animateTrail(t) {
+  if (t - last > 30) {
+    histArr.unshift({ x: mouseX, y: mouseY });
+    histArr.pop();
+    last = t;
+    trailEls.forEach(function(trail, idx) {
+      var pos = histArr[idx + 1] || histArr[histArr.length - 1];
+      trail.el.style.left = pos.x + 'px';
+      trail.el.style.top = pos.y + 'px';
+      var opacity = (1 - idx / NUM_TRAIL) * 0.6;
+      var scale = 1 - (idx / NUM_TRAIL) * 0.6;
+      trail.el.style.opacity = opacity;
+      trail.el.style.transform = 'translate(-50%,-50%) scale(' + scale + ')';
+    });
+  }
+  requestAnimationFrame(animateTrail);
+}
+requestAnimationFrame(animateTrail);
+</script>
+
+</body>
+</html>
