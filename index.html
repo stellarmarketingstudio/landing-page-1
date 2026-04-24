@@ -743,6 +743,60 @@
   }
   .wa-sub a { color: var(--white); text-decoration: underline; }
 
+  /* ===== FAQ ===== */
+  .faq-section { padding: 80px 60px; background: var(--cream); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--light-grey); }
+  .faq-item:first-child { border-top: 1px solid var(--light-grey); }
+  .faq-btn {
+    width: 100%; background: none; border: none; padding: 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; cursor: pointer; text-align: left;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 22px; font-weight: 400; color: var(--navy); line-height: 1.3;
+  }
+  .faq-icon {
+    font-size: 22px; color: var(--terra); flex-shrink: 0;
+    font-style: normal; font-family: 'Nunito Sans', sans-serif; font-weight: 300;
+    transition: transform 0.3s ease; display: inline-block;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    overflow: hidden; max-height: 0;
+    font-size: 17px; line-height: 1.75; color: #4b5563;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding-bottom: 0;
+  }
+  .faq-answer.open { max-height: 400px; padding-bottom: 28px; }
+  .faq-answer strong { color: var(--navy); }
+
+  /* ===== HOW IT WORKS ===== */
+  .hiw-toggle {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--terra);
+    padding: 20px 0 0; display: flex; align-items: center; gap: 8px;
+  }
+  .hiw-chevron { display: inline-block; transition: transform 0.3s ease; }
+  .hiw-toggle.open .hiw-chevron { transform: rotate(180deg); }
+  .hiw-body { overflow: hidden; max-height: 0; transition: max-height 0.5s ease; }
+  .hiw-body.open { max-height: 600px; }
+  .hiw-steps {
+    display: grid; gap: 16px;
+    margin-top: 20px; padding-top: 20px;
+    border-top: 1px solid var(--light-grey);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hiw-steps.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .hiw-num {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 28px; font-weight: 600; color: var(--terra);
+    opacity: 0.45; line-height: 1; margin-bottom: 8px;
+  }
+  .hiw-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .hiw-desc { font-size: 14px; line-height: 1.65; color: var(--mid-grey); }
+
   /* ===== FOOTER ===== */
   footer {
     padding: 32px 60px; border-top: 1px solid var(--warm-dark);
@@ -775,14 +829,12 @@
         <span class="h1-line">"Wow. I <em>have</em> to work with <span class="h1-underline">her</span>."</span>
       </h1>
       <div class="hero-bridge">
-        <p>Your clients are coming in… but they're not always the right ones, and there's not always enough.</p>
-        <p class="hb-sf">Sound familiar?</p>
-        <p>It often comes down to the same thing: people just can't see why you're the one.</p>
-        <p class="hb-close"><strong>But that's where I come in.</strong></p>
+        <p>Referrals got you here. But you can't predict them, and when they go quiet, there's nothing else to fall back on. It usually comes down to one thing: people can't see why you're the one.</p>
+        <p class="hb-close"><strong>That's where I come in.</strong></p>
       </div>
     </div>
     <div class="hero-photo-rect">
-      <img src="sarah-photo.jpg" alt="Sarah Hetherington" />
+      <img src="https://i.postimg.cc/mZzL1H1K/Sarah-and-Emma-Sep-2024-(54-of-120)-(1)-Medium.jpg" alt="Sarah Hetherington" />
     </div>
   </div>
 </div>
@@ -862,29 +914,29 @@
     </div>
     <div class="morph-pairs">
       <div class="morph-pair">
-        <div class="morph-before-word" id="mb0">Posting content but getting nothing back</div>
+        <div class="morph-before-word" id="mb0">You sit down on Sunday to do some posts. An hour and a half later, one draft you don't love.</div>
         <div class="morph-divider-bar"></div>
-        <div class="morph-after-word" id="ma0">Having a killer online presence</div>
+        <div class="morph-after-word" id="ma0">Someone messages out of nowhere: "I've been following you for a while and I think you're exactly who I need." You didn't pitch them.</div>
       </div>
       <div class="morph-pair">
-        <div class="morph-before-word" id="mb1">Attracting the wrong clients (or none)</div>
+        <div class="morph-before-word" id="mb1">Someone enquires, you put time into a proposal, and they come back asking if you can do it cheaper.</div>
         <div class="morph-divider-bar"></div>
-        <div class="morph-after-word" id="ma1">Turning away work that isn't right for you</div>
+        <div class="morph-after-word" id="ma1">A discovery call where they already know your rate, understand your process, and just want to confirm you're the right fit.</div>
       </div>
       <div class="morph-pair">
-        <div class="morph-before-word" id="mb2">Can't explain your price point</div>
+        <div class="morph-before-word" id="mb2">You send a quote and spend the next three days wondering if it was the website they looked at before going quiet.</div>
         <div class="morph-divider-bar"></div>
-        <div class="morph-after-word" id="ma2">Charging what you're worth with confidence</div>
+        <div class="morph-after-word" id="ma2">You write a quote at your full rate and send it without changing the number.</div>
       </div>
       <div class="morph-pair">
-        <div class="morph-before-word" id="mb3">Looking like everyone else in your field</div>
+        <div class="morph-before-word" id="mb3">You read your own website and think: this could be anyone.</div>
         <div class="morph-divider-bar"></div>
-        <div class="morph-after-word" id="ma3">The obvious choice to the clients you actually want</div>
+        <div class="morph-after-word" id="ma3">Someone at a networking event says "I've been following you on LinkedIn." You know exactly what they mean.</div>
       </div>
       <div class="morph-pair">
-        <div class="morph-before-word" id="mb4">Dreading doing your own marketing</div>
+        <div class="morph-before-word" id="mb4">You film a video for LinkedIn. Watch it back. Delete it. Tell yourself you'll try again when the light is better.</div>
         <div class="morph-divider-bar"></div>
-        <div class="morph-after-word" id="ma4">Proud of your brand</div>
+        <div class="morph-after-word" id="ma4">You close your laptop on Friday. Pipeline's healthy. You don't think about work again until Monday.</div>
       </div>
     </div>
   </div>
@@ -937,6 +989,41 @@
 
   </div>
   <p class="offers-reassurance">I'm not expecting you to know which is right for you. We can have a big old chat before figuring out the right option.</p>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>The stuff you're weighing up right now.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span>Why the MOT first?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Because without it, you end up with something that looks the part but doesn't say anything that makes someone choose you. The conversation is where we find your gold dust — the thing that makes you the obvious choice. Skip it and you're just guessing.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span>How much is this?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">It depends on what you need. Could be a fresh website. Could be full marketing for a year. Every project starts with the £495 MOT, and that figure comes off your invoice if we go on to build something bigger. I price by project, not by hour, so you know exactly where you stand before we begin.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span>How is this different?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">If you've paid for something before that looked fine but didn't feel like you, the missing piece is usually the time spent on the business before anything was built. You'll get that here. I take on a small number of projects so nothing gets rushed, and I'll tell you honestly if I don't think it's the right fit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span>I don't have time for another big project.</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Most of my clients don't either. The whole point is I do the thinking and building so you don't have to. You'll give me 90 minutes for the MOT and an hour here and there for review calls.</div>
+    </div>
+  </div>
 </div>
 
 <!-- REVIEWS -->
@@ -1003,7 +1090,7 @@
 <!-- BOTTOM CTA -WhatsApp form -->
 <div class="bottom-cta" id="contact">
   <h2>Let's make you inevitable.</h2>
-  <p class="bottom-cta-sub" style="margin-bottom:32px;">All you need to do is put your name in. I'll take it from there.</p>
+  <p class="bottom-cta-sub" style="margin-bottom:32px;">Stick your name in below. I'll drop you a message and we'll find a time for a proper chat.</p>
   <div class="wa-form">
     <div class="wa-input-row">
       <input type="text" id="wa-name" class="wa-input" placeholder="Your name..." autocomplete="given-name" />
@@ -1027,6 +1114,29 @@
     <a href="#contact">Contact</a>
   </div>
 </footer>
+
+<!-- FAQ JS -->
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').classList.remove('open');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+function toggleHiw(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+</script>
 
 <!-- WHATSAPP FORM JS -->
 <script>
