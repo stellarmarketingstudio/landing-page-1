@@ -877,6 +877,7 @@
     <a href="mot.html">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="#contact">Contact</a>
+    <a href="privacy-policy.html">Privacy</a>
   </div>
 </footer>
 
@@ -895,7 +896,7 @@ function openEmail() {
   var input = document.getElementById('wa-name').value.trim();
   var subject = encodeURIComponent('Enquiry' + (input ? ' - ' + input : ''));
   var body = encodeURIComponent('Hi Sarah,\n\nI\'d love to chat about working together.' + (input ? '\n\n' + input : '') + '\n\nLooking forward to chatting!');
-  window.location.href = 'mailto:hello@sarahhetherington.com?subject=' + subject + '&body=' + body;
+  window.location.href = 'mailto:sarah@stellarmarketingstudio.co.uk?subject=' + subject + '&body=' + body;
 }
 function openWhatsApp() {
   const name = document.getElementById('wa-name').value.trim() || 'there';

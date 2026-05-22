@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy, Sarah Hetherington</title>
+<meta name="description" content="How Stellar Marketing Studio collects, uses and looks after your personal information.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none}
+  :root{--navy:#001846;--navy-deep:#001236;--paper:#faf6ec;--cream:#f1e8d2;--stone:#e7dec5;--grey:#6a6a6a;--white:#ffffff}
+  html,body{background:var(--paper);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
+  ::selection{background:var(--navy);color:var(--paper)}
+  .page{width:100%;background:var(--paper);position:relative;overflow:hidden}
+  .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
+  a{color:inherit}
+
+  /* CUSTOM CURSOR */
+  #cursor{position:fixed;pointer-events:none;z-index:9999;font-size:1.4rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:transform .1s ease}
+  .cursor-trail{position:fixed;pointer-events:none;z-index:9998;font-size:.75rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);opacity:0}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:var(--paper);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000}
+  .wm{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:6px}
+  .wm .ast{font-size:18px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em}
+  .nav-links .pill{border:1px solid var(--navy);padding:8px 16px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,border-color .2s}
+  .nav-links .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
+
+  /* HAMBURGER + MOBILE NAV */
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:1px solid var(--navy);padding:10px;flex-shrink:0}
+  .hamburger span{display:block;height:2px;background:var(--navy);transition:transform .25s ease,opacity .25s ease}
+  .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+  .mobile-nav.open{display:flex}
+  .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
+  .mobile-nav .m-link:hover{opacity:1}
+  .mobile-nav .m-btn{margin-top:8px}
+
+  /* HEADER */
+  .policy-hero{padding:80px 56px 56px;border-bottom:1px solid var(--navy)}
+  .policy-hero .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:18px}
+  .policy-hero h1{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.03em;line-height:1;font-size:clamp(48px,8vw,96px);color:var(--navy);margin-bottom:20px}
+  .policy-hero p{font-size:18px;line-height:1.6;color:#1f2740;max-width:640px}
+
+  /* BODY */
+  .policy{padding:64px 56px 96px}
+  .policy-inner{max-width:760px;margin:0 auto}
+  .policy-updated{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--grey);margin-bottom:40px}
+  .policy h2{font-family:'Fraunces',serif;font-weight:400;font-size:26px;line-height:1.25;letter-spacing:-.01em;color:var(--navy);margin:40px 0 14px}
+  .policy h2:first-of-type{margin-top:0}
+  .policy p{font-size:17px;line-height:1.75;color:#1f2740;margin-bottom:14px}
+  .policy ul{list-style:none;margin:14px 0 18px}
+  .policy ul li{font-size:17px;line-height:1.7;color:#1f2740;padding-left:24px;position:relative;margin-bottom:8px}
+  .policy ul li::before{content:'✦';position:absolute;left:0;color:var(--navy);font-family:'Fraunces',serif;font-size:13px;top:3px}
+  .policy a{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .policy strong{color:var(--navy);font-weight:700}
+  .policy .ph{background:var(--stone);padding:2px 6px;font-size:15px;font-weight:600;color:var(--navy)}
+
+  footer{padding:32px 56px;display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);gap:24px}
+  footer a{color:rgba(255,255,255,.65);text-decoration:none;margin-left:24px;font-size:14px;transition:color .2s}
+  footer a:hover{color:var(--paper)}
+  footer .l{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--paper)}
+  footer .l .ast{font-size:14px;color:var(--white)}
+  footer p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+
+  @media (max-width:900px){
+    nav{padding:16px 24px}
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .policy-hero{padding:56px 24px 40px}
+    .policy{padding:48px 24px 72px}
+    footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
+    #cursor,.cursor-trail{display:none}
+  }
+</style>
+</head>
+<body>
+<div id="cursor">✦</div>
+<nav>
+  <a href="index.html" class="wm">Sarah <sup class="ast">✦</sup> Hetherington</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="check-up.html">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="index.html#contact" class="pill">Chat with me ↗</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="m-link">Home</a>
+  <a href="check-up.html" class="m-link">The First Look</a>
+  <a href="mot.html" class="m-link">The Marketing MOT</a>
+  <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
+  <a href="index.html#contact" class="pill m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
+</div>
+
+<div class="page">
+
+<section class="policy-hero">
+  <div class="kicker">Stellar Marketing Studio</div>
+  <h1>Privacy Policy</h1>
+  <p>This page explains what personal information I collect when you use this website or get in touch, what I do with it, and the rights you have over it.</p>
+</section>
+
+<section class="policy">
+  <div class="policy-inner">
+    <div class="policy-updated">Last updated: May 2026</div>
+
+    <p>This website belongs to Stellar Marketing Studio, run by Sarah Hetherington. If you have any questions about anything on this page, email me at <a href="mailto:sarah@stellarmarketingstudio.co.uk">sarah@stellarmarketingstudio.co.uk</a>.</p>
+
+    <h2>1. Who is responsible for your information</h2>
+    <p>Stellar Marketing Studio (Sarah Hetherington) is the data controller for the information collected through this website. That means I'm responsible for looking after it and using it properly.</p>
+    <p>You can reach me at <a href="mailto:sarah@stellarmarketingstudio.co.uk">sarah@stellarmarketingstudio.co.uk</a>.</p>
+
+    <h2>2. What information I collect</h2>
+    <p>When you fill in a form or message me through this website, I collect:</p>
+    <ul>
+      <li>Your name</li>
+      <li>Your email address</li>
+      <li>Information about your business, such as the type of business you run</li>
+      <li>The platform you'd like me to look at, if you've told me</li>
+      <li>Anything else you choose to write in a message to me</li>
+    </ul>
+    <p>If you contact me by WhatsApp using the buttons on this site, I'll also have your name and WhatsApp number, along with whatever you choose to tell me in that conversation.</p>
+    <p>This website does not use tracking cookies or analytics. It does load fonts from Google Fonts, which means your device's IP address is shared with Google when a page loads. This is common across the web, but I want you to know it happens.</p>
+
+    <h2>3. Why I collect it, and my lawful basis</h2>
+    <p>I collect this information so I can:</p>
+    <ul>
+      <li>Reply to your enquiry and answer your questions</li>
+      <li>Arrange a call or a piece of work with you</li>
+      <li>Provide the services you've asked about</li>
+    </ul>
+    <p>Under UK data protection law I need a lawful basis to use your information. I rely on <strong>taking steps at your request before entering into a contract</strong> when you get in touch about working together, and <strong>legitimate interests</strong> to respond to general enquiries and run my business.</p>
+    <p>I will not add you to a marketing list or send you marketing emails unless you have clearly agreed to that separately.</p>
+
+    <h2>4. How long I keep it</h2>
+    <p>I only keep your information for as long as I need it. If we don't end up working together, I delete your enquiry within 12 months. If we do work together, I keep relevant records for six years for tax and accounting reasons.</p>
+
+    <h2>5. Who I share it with</h2>
+    <p>I never sell your information to anyone.</p>
+    <p>I do use a small number of trusted services to run my business, and your information may pass through them:</p>
+    <ul>
+      <li>My email provider, Google Workspace, so I can send and receive emails</li>
+      <li>WhatsApp (owned by Meta), if you choose to message me there</li>
+    </ul>
+    <p>These providers handle your information on my behalf, only to help me run my business.</p>
+
+    <h2>6. Your rights</h2>
+    <p>Under UK data protection law you have the right to:</p>
+    <ul>
+      <li>Ask for a copy of the information I hold about you</li>
+      <li>Ask me to correct anything that's wrong</li>
+      <li>Ask me to delete your information</li>
+      <li>Ask me to restrict or stop using your information</li>
+      <li>Object to me using your information</li>
+      <li>Ask for your information in a portable format</li>
+    </ul>
+    <p>To do any of these, just email me at <a href="mailto:sarah@stellarmarketingstudio.co.uk">sarah@stellarmarketingstudio.co.uk</a> and I'll sort it out.</p>
+
+    <h2>7. Complaints</h2>
+    <p>If you're unhappy with how I've handled your information, I'd really like the chance to put it right, so please get in touch first.</p>
+    <p>You also have the right to complain to the Information Commissioner's Office, the UK regulator for data protection. You can find them at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>If I change how I handle your information, I'll update this page. The date at the top tells you when it last changed.</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="l">Sarah <span class="ast">✦</span> Hetherington</div>
+    <p>© 2026 Stellar Marketing Studio. All rights reserved.</p>
+  </div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="check-up.html">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var cursorEl=document.getElementById('cursor');
+  if(!cursorEl)return;
+  var NUM_TRAIL=10,trailEls=[];
+  for(var i=0;i<NUM_TRAIL;i++){
+    var el=document.createElement('div');el.className='cursor-trail';el.textContent='✦';
+    document.body.appendChild(el);trailEls.push({el:el});
+  }
+  var mouseX=-100,mouseY=-100,histArr=[],last=0;
+  for(var j=0;j<NUM_TRAIL+1;j++)histArr.push({x:-100,y:-100});
+  document.addEventListener('mousemove',function(e){
+    mouseX=e.clientX;mouseY=e.clientY;
+    cursorEl.style.left=mouseX+'px';cursorEl.style.top=mouseY+'px';
+  });
+  function animateTrail(t){
+    if(t-last>30){
+      histArr.unshift({x:mouseX,y:mouseY});histArr.pop();last=t;
+      trailEls.forEach(function(trail,idx){
+        var pos=histArr[idx+1]||histArr[histArr.length-1];
+        trail.el.style.left=pos.x+'px';trail.el.style.top=pos.y+'px';
+        trail.el.style.opacity=(1-idx/NUM_TRAIL)*0.6;
+        trail.el.style.transform='translate(-50%,-50%) scale('+(1-(idx/NUM_TRAIL)*0.6)+')';
+      });
+    }
+    requestAnimationFrame(animateTrail);
+  }
+  requestAnimationFrame(animateTrail);
+})();
+(function(){
+  var hamburger=document.getElementById('hamburger');
+  var mobileNav=document.getElementById('mobileNav');
+  if(!hamburger||!mobileNav)return;
+  window.closeMobileNav=function(){
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow='';
+  };
+  hamburger.addEventListener('click',function(){
+    if(mobileNav.classList.contains('open')){window.closeMobileNav();}
+    else{hamburger.classList.add('open');mobileNav.classList.add('open');document.body.style.overflow='hidden';}
+  });
+  mobileNav.querySelectorAll('.m-link').forEach(function(link){
+    link.addEventListener('click',window.closeMobileNav);
+  });
+})();
+</script>
+</body>
+</html>
