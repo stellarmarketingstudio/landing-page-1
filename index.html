@@ -296,9 +296,9 @@
   .morph-cell.head { padding: 16px 24px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
   .morph-cell.b { background: var(--warm-dark); color: #6b7280; }
   .morph-cell.b.head { color: var(--navy); }
-  .morph-cell.a { background: var(--cream); color: var(--navy); border-left: 1px solid var(--navy); font-family: 'Nunito Sans', sans-serif; font-weight: 400; }
+  .morph-cell.a { background: var(--navy); color: var(--cream); border-left: 1px solid var(--navy); font-family: 'Nunito Sans', sans-serif; font-weight: 400; }
   .morph-cell.a.head { background: var(--navy); color: var(--cream); }
-  .morph-cell.a em { font-style: normal; font-weight: 700; color: var(--navy); }
+  .morph-cell.a em { font-style: normal; font-weight: inherit; color: var(--cream); }
 
   /* ===== THIS IS FOR YOU IF ===== */
   .forif-section { background: var(--navy); padding: 120px 60px; border-bottom: 1px solid var(--navy); position: relative; overflow: hidden; }
@@ -472,7 +472,7 @@
     .morph-cell { padding: 16px 18px; }
     .morph-cell.a { border-left: none; border-top: 1px solid var(--navy); }
     .morph-cell.b::before { content: 'Right now'; display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #9ca3af; margin-bottom: 8px; }
-    .morph-cell.a::before { content: 'Working with me'; display: inline-block; background: var(--navy); color: var(--cream); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 5px 10px; margin-bottom: 10px; }
+    .morph-cell.a::before { content: 'Working with me'; display: block; color: var(--cream); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
     .forif-section { padding: 72px 20px; }
     .forif-list .item { grid-template-columns: 52px 1fr auto; gap: 16px; padding: 24px 0; }
     .forif-list .item .n { font-size: 26px; }
@@ -912,12 +912,9 @@ document.getElementById('wa-name').addEventListener('keypress', function(e) {
     var t = val / 100;
     for (var i = 0; i < count; i++) {
       var before = document.getElementById('mb' + i);
-      var after  = document.getElementById('ma' + i);
       before.style.color = lerpRGB([107,114,128],[185,178,168], t);
       before.style.textDecoration = t > 0.1 ? 'line-through' : 'none';
       before.style.textDecorationColor = 'rgba(180,150,150,' + Math.min(1, t * 2.5) + ')';
-      after.style.color = lerpRGB([160,123,90],[0,24,70], Math.min(1, t * 1.4));
-      after.style.fontWeight = t > 0.6 ? '700' : t > 0.3 ? '600' : '500';
     }
   }
   if (!window.matchMedia('(max-width:900px)').matches) {
