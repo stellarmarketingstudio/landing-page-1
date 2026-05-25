@@ -458,7 +458,7 @@
     .hamburger { display: flex; }
     .nav-links { display: none; }
     .hero { padding: 48px 20px 56px; }
-    h1 { font-size: clamp(44px, 10vw, 72px); }
+    h1 { font-size: clamp(54px, 14vw, 92px); }
     .hero-meta { display: none; }
     .hero-foot { flex-direction: column; gap: 24px; }
     .hero .sparkle-cluster { width: 120px; height: 120px; top: 12px; right: 12px; }
@@ -475,14 +475,20 @@
     .slider-section { padding: 64px 20px; }
     .slider-section h2 { font-size: 44px; }
     .morph-slider-row, .morph-hint { display: none; }
-    .morph-row { grid-template-columns: 1fr; }
+    .morph { border: none; }
+    .morph-row { grid-template-columns: 1fr; border: 1px solid var(--navy); margin-bottom: 16px; }
+    .morph-row:first-child { display: none; }
+    .morph-row:last-child { margin-bottom: 0; border-bottom: 1px solid var(--navy); }
     .morph-cell { padding: 16px 18px; }
     .morph-cell.a { border-left: none; border-top: 1px solid var(--navy); }
+    .morph-cell.b::before { content: 'Right now'; display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #9ca3af; margin-bottom: 8px; }
+    .morph-cell.a::before { content: 'Working with me'; display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .forif-section { padding: 72px 20px; }
     .forif-list .item { grid-template-columns: 52px 1fr auto; gap: 16px; padding: 24px 0; }
     .forif-list .item .n { font-size: 26px; }
     .offers-section { padding: 72px 20px; }
     .offer-row { grid-template-columns: 48px 1fr; gap: 16px; padding: 28px 0; }
+    .offer-row .desc { grid-column: 1 / -1; }
     .offer-row.highlight { margin: 0 -20px; padding: 28px 20px; }
     .offer-row .right { grid-column: 1 / -1; text-align: left; flex-direction: row; flex-wrap: wrap; gap: 16px; align-items: center; }
     .faq-section { padding: 72px 20px; }
@@ -854,13 +860,13 @@
   </div>
   <h2>Let's make<br>you <em>inevitable.</em></h2>
   <div class="cta-row">
-    <p>Put your name in below and I'll be in touch to answer your questions or find a time for a chat.</p>
+    <p>The best place to start is a free <a href="check-up.html" style="color:var(--stone);text-decoration:underline;text-underline-offset:2px;">First Look</a>. 30 minutes, no pressure, and you leave with three things to act on. Or if you've got a question first, pop your name below and I'll come back to you.</p>
     <div class="wa-wrap">
       <div class="wa-input-row">
         <input type="text" id="wa-name" class="wa-input" placeholder="Your name…" autocomplete="given-name" />
         <button class="wa-btn" onclick="openWhatsApp()">WhatsApp me →</button>
       </div>
-      <a href="#" class="wa-email-link" onclick="openEmail(); return false;">✉ Email me instead</a>
+      <a href="#" class="wa-email-link" onclick="openEmail(); return false;">✉ Or email me at sarah@stellarmarketingstudio.co.uk</a>
     </div>
   </div>
 </div>
