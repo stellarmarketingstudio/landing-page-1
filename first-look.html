@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free marketing review call for small business owners | The First Look</title>
+<meta name="description" content="A free 30-minute call where I look at one of your platforms and give you three specific things to fix. A friendly, no-pressure place to start.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  strong{font-weight:inherit!important}
+  :root{
+    --navy:#001846;
+    --navy-deep:#001236;
+    --ink:#0a0a0a;
+    --paper:#faf6ec;
+    --cream:#f1e8d2;
+    --stone:#e7dec5;
+    --white:#ffffff;
+    --grey:#6a6a6a;
+  }
+  html,body{background:var(--paper);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
+  ::selection{background:var(--navy);color:var(--paper)}
+  .page{width:100%;background:var(--paper);position:relative;overflow:hidden}
+  .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
+  a{color:inherit}
+
+  /* SPARKLES */
+  .sparkles{position:absolute;pointer-events:none;line-height:1;z-index:1}
+  .sparkles span{position:absolute;display:inline-block;color:var(--navy);font-family:'Fraunces',serif;font-weight:300;animation:twinkle 3.6s ease-in-out infinite;will-change:transform,opacity}
+  .sparkles span.lite{color:var(--grey)}
+  .sparkles span.dim{opacity:.35}
+  @keyframes twinkle{0%,100%{opacity:.45;transform:scale(.85) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(18deg)}}
+  @keyframes twinkleSlow{0%,100%{opacity:.25;transform:scale(.7) rotate(-12deg)}50%{opacity:.85;transform:scale(1) rotate(8deg)}}
+
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:var(--paper);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000}
+  .wm{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:6px}
+  .wm .ast{font-size:18px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em}
+  .nav-links a.active{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+  .nav-links .pill{border:1px solid var(--navy);padding:8px 16px;border-radius:0;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s, color .2s}
+  .nav-links .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
+
+  /* HERO */
+  .hero{background:var(--paper);color:var(--navy);position:relative;overflow:hidden;border-bottom:1px solid var(--navy);padding:96px 80px 144px}
+  .hero-meta{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--navy);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:200px}
+  .hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(56px,9vw,128px);line-height:.95;letter-spacing:-.035em;color:var(--navy);margin:0;max-width:1000px}
+  .hero-lede{font-family:'Fraunces',serif;font-size:clamp(18px,2.2vw,24px);line-height:1.45;font-weight:400;color:var(--navy);max-width:580px;margin-top:80px;letter-spacing:-.005em}
+  .hero-cta-row{margin-top:64px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+  .ast-accent{position:absolute;font-family:'Fraunces',serif;font-weight:300;line-height:1;animation:twinkle 4s ease-in-out infinite;pointer-events:none;top:140px;right:140px;font-size:32px;color:var(--navy);opacity:.55}
+  .hero-sub-link{font-size:13px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;font-weight:600;letter-spacing:.02em}
+  .pill-cta{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--paper);padding:14px 24px;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--navy);transition:background .2s,color .2s;cursor:pointer;font-family:inherit}
+  .pill-cta:hover{background:var(--navy-deep);color:var(--paper)}
+  .pill-cta .arr{font-family:'Fraunces',serif;font-size:16px;color:var(--paper)}
+  .pill-cta:hover .arr{color:var(--paper)}
+  .pill-cta--filled{background:var(--navy);color:var(--paper)}
+  .pill-cta--filled .arr{color:var(--paper)}
+  .pill-cta--filled:hover{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+  .pill-cta--paper{background:var(--paper);color:var(--navy);border-color:var(--paper)}
+  .pill-cta--paper:hover{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+  .pill-cta--paper .arr{color:var(--navy)}
+  .pill-cta--paper:hover .arr{color:var(--paper)}
+
+  /* URGENCY STRIP */
+  .urgency{padding:18px 56px;background:var(--navy);color:var(--paper);text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--navy)}
+  .urgency .ast{color:var(--stone);font-style:normal;margin:0 12px}
+
+  /* TOO CLOSE, editorial split */
+  .tooclose{padding:120px 56px;border-bottom:1px solid var(--navy);background:var(--paper);position:relative}
+  .tooclose-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .tooclose-l h2{font-family:'Fraunces',serif;font-weight:300;font-size:88px;line-height:.92;letter-spacing:-.03em;color:var(--navy);margin-bottom:32px}
+  .tooclose-l h2 em{font-style:normal;color:var(--navy);font-weight:400}
+  .tooclose-portrait{aspect-ratio:4/5;background-size:cover;background-position:top center;background-image:url('images/sarah-portrait.jpg');width:100%}
+  .tooclose-r{padding-top:24px}
+  .tooclose-r .lede{font-family:'Fraunces',serif;font-size:30px;line-height:1.3;color:var(--navy);font-weight:400;margin-bottom:24px;letter-spacing:-.01em}
+  .tooclose-r .lede em{font-style:normal;color:var(--navy)}
+  .tooclose-r p{font-size:17px;line-height:1.7;color:#1f2740;margin-bottom:14px}
+  .tooclose-r p strong{color:var(--navy);font-weight:700}
+  .tooclose-r .cta-row{margin-top:28px}
+
+  /* WHAT HAPPENS, numbered table */
+  .happens{padding:120px 56px;background:var(--cream);border-bottom:1px solid var(--navy);position:relative;overflow:hidden}
+  .happens-head{margin-bottom:48px;text-align:center}
+  .happens-head h2{font-family:'Fraunces',serif;font-weight:300;font-size:96px;line-height:.92;letter-spacing:-.03em;color:var(--navy)}
+  .happens-table{border-top:1px solid var(--navy);max-width:1180px;margin:0 auto}
+  .happens-row{display:grid;grid-template-columns:1fr 2fr 80px;gap:32px;padding:44px 0;border-bottom:1px solid var(--navy);align-items:start}
+  .happens-row .t h3{font-family:'Fraunces',serif;font-weight:400;font-size:36px;line-height:1.05;letter-spacing:-.02em;color:var(--navy)}
+  .happens-row .t h3 strong{font-weight:400;font-style:normal;color:var(--navy)}
+  .happens-row .desc{font-size:16px;line-height:1.7;color:#1f2740}
+  .happens-row .arr-cell{font-family:'Fraunces',serif;font-size:32px;color:var(--navy);text-align:center;padding-top:4px;font-weight:300}
+  .happens-foot{margin-top:48px;text-align:center}
+  .happens-foot .note{font-size:14px;color:var(--grey);letter-spacing:.04em;margin-bottom:18px}
+
+  /* TESTIMONIAL, full bleed editorial pull-quote */
+  .testi{padding:120px 56px;background:var(--navy);color:var(--paper);border-bottom:1px solid var(--navy);position:relative;overflow:hidden}
+  .testi-grid{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:2}
+  .testi-photo{width:240px;height:240px;border-radius:50%;background-size:cover;background-position:top center;background-image:url('images/claire.jpg');flex-shrink:0}
+  .testi-r .stars{font-size:14px;color:var(--stone);letter-spacing:6px;font-weight:700;margin-bottom:20px}
+  .testi-r blockquote{font-family:'Fraunces',serif;font-weight:300;font-size:42px;line-height:1.25;letter-spacing:-.015em;color:var(--paper);margin-bottom:24px}
+  .testi-r blockquote em{font-style:normal;color:var(--paper);font-weight:300}
+  .testi-r .who{display:flex;gap:14px;align-items:baseline;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+  .testi-r .who .name{color:var(--paper)}
+  .testi-r .who .biz{color:rgba(255,255,255,.6)}
+  .testi .sparkles{top:50px;right:50px;width:240px;height:200px;opacity:.6}
+  .testi .sparkles span{color:var(--stone)}
+  .testi .sparkles .a1{top:20px;left:100px;font-size:96px}
+  .testi .sparkles .a2{top:0;left:30px;font-size:24px}
+  .testi .sparkles .a3{top:140px;left:10px;font-size:18px}
+  .testi .sparkles .a4{top:155px;left:170px;font-size:38px}
+
+  /* GO FURTHER (MOT signpost) */
+  .gofurther{padding:120px 56px;background:var(--stone);border-bottom:1px solid var(--navy);position:relative;overflow:hidden}
+  .gofurther-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;max-width:1180px;margin:0 auto}
+  .gofurther-l .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:14px}
+  .gofurther-l h2{font-family:'Fraunces',serif;font-weight:300;font-size:80px;line-height:.95;letter-spacing:-.03em;color:var(--navy);margin-bottom:8px}
+  .gofurther-l h2 em{font-style:normal;color:var(--navy);font-weight:300}
+  .gofurther-r{padding-top:32px}
+  .gofurther-r p{font-size:17px;line-height:1.7;color:#1f2740;margin-bottom:14px}
+  .gofurther-r p strong{color:var(--navy);font-weight:700}
+  .gofurther-r .cta-row{margin-top:28px}
+
+  /* CTA / FORM */
+  .cta-sec{padding:110px 56px;background:var(--navy);color:var(--paper);position:relative;overflow:hidden;border-bottom:1px solid var(--navy)}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1180px;margin:0 auto;position:relative;z-index:2}
+  .cta-l h2{font-family:'Fraunces',serif;font-weight:300;font-size:120px;line-height:.9;letter-spacing:-.035em;color:var(--white);margin-bottom:24px}
+  .cta-l h2 em{font-style:normal;color:var(--white);font-weight:300}
+  .cta-l .lede{font-family:'Fraunces',serif;font-size:24px;line-height:1.35;font-weight:400;color:var(--paper);max-width:480px;margin-bottom:28px;letter-spacing:-.005em;opacity:.9}
+  .cta-l .urgency-note{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--stone);padding-top:24px;border-top:1px solid rgba(255,255,255,.35);max-width:480px}
+  .cta-r{padding-top:8px}
+  .form-row{margin-bottom:18px}
+  .form-row-half{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:8px}
+  .form-input,.form-select,.form-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.65);padding:12px 0;font-family:inherit;font-size:16px;color:var(--white);outline:none;transition:border-color .2s}
+  .form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,.5)}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--white)}
+  .form-select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23ffffff' d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 4px center}
+  .form-select option{background:var(--navy);color:var(--paper)}
+  .form-textarea{resize:vertical;min-height:80px}
+  .form-submit{margin-top:14px;display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--navy);border:1px solid var(--white);padding:16px 28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+  .form-submit:hover{background:var(--navy);color:var(--white);border-color:var(--white)}
+  .form-submit .arr{font-family:'Fraunces',serif;font-size:16px}
+  .form-privacy{margin-top:16px;font-size:12px;line-height:1.6;color:rgba(255,255,255,.55)}
+  .form-privacy a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:2px}
+
+  .cta-sec .sparkles{bottom:60px;left:40px;width:200px;height:140px;opacity:.5}
+  .cta-sec .sparkles span{color:var(--paper)}
+  .cta-sec .sparkles .a1{bottom:30px;left:60px;font-size:64px}
+  .cta-sec .sparkles .a2{bottom:80px;left:0;font-size:20px}
+  .cta-sec .sparkles .a3{bottom:0;left:130px;font-size:28px}
+
+  /* FOOTER */
+  footer{padding:32px 56px;display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);gap:24px}
+  footer a{color:rgba(255,255,255,.65);text-decoration:none;margin-left:24px;font-size:14px;transition:color .2s}
+  footer a:hover{color:var(--paper)}
+  footer .l{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--paper)}
+  footer p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+  footer .l .ast{font-size:14px}
+
+  footer .l .ast{color:var(--white);}
+
+  /* HAMBURGER + MOBILE NAV */
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:1px solid var(--navy);padding:10px;flex-shrink:0}
+  .hamburger span{display:block;height:2px;background:var(--navy);transition:transform .25s ease,opacity .25s ease}
+  .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+  .mobile-nav.open{display:flex}
+  .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
+  .mobile-nav .m-link.active,.mobile-nav .m-link:hover{opacity:1}
+  .mobile-nav .m-btn{margin-top:8px}
+  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;transition:background .2s,border-color .2s}
+  .mobile-nav .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep);opacity:1}
+
+  /* MOBILE */
+  @media (max-width:900px){
+    nav{padding:16px 24px}
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .hero{padding:56px 24px 80px}
+    .hero h1{font-size:clamp(42px,13vw,56px)}
+    .hero-meta{margin-bottom:96px;font-size:10px}
+    .ast-accent{top:64px;right:24px;font-size:22px}
+    .hero-lede{margin-top:40px}
+    .hero-cta-row{margin-top:36px}
+    .tooclose,.happens,.testi,.gofurther,.cta-sec{padding:64px 24px}
+    .tooclose-grid,.gofurther-grid,.cta-grid{grid-template-columns:1fr;gap:32px}
+    .happens-row{grid-template-columns:1fr;gap:18px}
+    .happens-row .arr-cell{display:none}
+    .happens-head h2,.tooclose-l h2,.gofurther-l h2,.cta-l h2{font-size:48px}
+    .testi-grid{grid-template-columns:1fr;gap:32px;text-align:center}
+    .testi-photo{margin:0 auto;width:160px;height:160px}
+    .testi-r blockquote{font-size:24px}
+    .form-row-half{grid-template-columns:1fr}
+    footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="wm">Sarah <sup class="ast">✦</sup> Hetherington</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="first-look.html" class="active">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="#contact" class="pill">Chat with me ↗</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="m-link">Home</a>
+  <a href="first-look.html" class="m-link active">The First Look</a>
+  <a href="mot.html" class="m-link">The Marketing MOT</a>
+  <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
+  <a href="#contact" class="pill m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
+</div>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    <span>Stellar Marketing Studio</span>
+    <span>The First Look / Free / 30 mins</span>
+  </div>
+  <span class="ast-accent">✦</span>
+  <h1>Something's putting the right clients off. Let's find out what.</h1>
+  <p class="hero-lede">In a free 30-minute call, I look at one of your platforms and give you three specific things to fix.</p>
+  <div class="hero-cta-row">
+    <a href="#contact" class="pill-cta pill-cta--filled">Book your free spot <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- URGENCY STRIP -->
+<div class="urgency"><span class="ast">✦</span> I prep each one myself, so I cap these at five a month <span class="ast">✶</span> Don't sit on it <span class="ast">✦</span></div>
+
+<!-- TOO CLOSE -->
+<section class="tooclose">
+  <div class="tooclose-grid">
+    <div class="tooclose-l">
+      <h2>You're usually too close to <em>see it clearly.</em></h2>
+      <div class="tooclose-portrait"></div>
+    </div>
+    <div class="tooclose-r">
+      <p class="lede">You know your business inside out. <em>That's partly the problem.</em></p>
+      <p>When you're that close to it, you stop seeing it the way a stranger does. You stop noticing what's putting people off, or what's just not pulling them in.</p>
+      <p>The person who finds you online for the first time has <strong>three seconds</strong> to decide if they want to know more.</p>
+      <p>That's where I come in.</p>
+      <div class="cta-row"><a href="#contact" class="pill-cta">Book your free First Look <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS -->
+<section class="happens">
+  <div class="happens-head">
+    <h2>How it works.</h2>
+  </div>
+  <div class="happens-table">
+    <div class="happens-row">
+      <div class="t">
+        <h3>Fill in a <strong>short form.</strong></h3>
+      </div>
+      <div class="desc">Tell me about your business and pick the platform you want me to look at. It could be your website, social media, Google listing, wherever you feel most stuck.</div>
+      <div class="arr-cell">↓</div>
+    </div>
+    <div class="happens-row">
+      <div class="t">
+        <h3>I take a <strong>proper look.</strong></h3>
+      </div>
+      <div class="desc">I go through it as if I've never heard of you. Someone who doesn't already know how good you are. After 8 years in marketing, I know exactly what a stranger sees in the first three seconds, what's working, what might be putting people off, and small changes that can make a big impact.</div>
+      <div class="arr-cell">↓</div>
+    </div>
+    <div class="happens-row">
+      <div class="t">
+        <h3>We talk for <strong>30 minutes.</strong></h3>
+      </div>
+      <div class="desc">You leave with three specific things to act on. Not a list of everything that's wrong. The things that would make the biggest difference to your first impression. Whether we work together after or not, you'll leave with something to act on straight away.</div>
+      <div class="arr-cell"><span class="ast" style="color:var(--navy)">✦</span></div>
+    </div>
+  </div>
+  <div class="happens-foot">
+    <a href="#contact" class="pill-cta pill-cta--filled">Grab your free spot <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- GO FURTHER -->
+<section class="gofurther">
+  <div class="gofurther-grid">
+    <div class="gofurther-l">
+      <div class="kicker">After your call</div>
+      <h2>Want to <em>go further?</em></h2>
+    </div>
+    <div class="gofurther-r">
+      <p>If after your call you want to dig properly into what makes you different, your messaging, your ideal client, everything that should be showing up in your marketing but isn't, that's what the <strong>Marketing MOT</strong> is for.</p>
+      <p>A 60-minute conversation, a proper audit of everything you're putting out there, and a written guide you can come back to every time you sit down to write or post. Plus a 30-minute follow-up call to go through your findings together. The £495 comes straight off if we go on to work together on something bigger.</p>
+      <div class="cta-row"><a href="mot.html" class="pill-cta">Find out about the MOT <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / FORM -->
+<section class="cta-sec" id="contact">
+  <div class="sparkles">
+    <span class="a1">✦</span>
+    <span class="a2" style="animation-delay:.6s">⋆</span>
+    <span class="a3" style="animation-delay:1.2s">✶</span>
+  </div>
+  <div class="cta-grid">
+    <div class="cta-l">
+      <h2>Let me <em>take a look.</em></h2>
+      <p class="lede">Fill in the short form and I'll be in touch to organise your slot.</p>
+      <div class="urgency-note">I only do 5 per month, so if you want a spot, now's the time.</div>
+    </div>
+    <div class="cta-r">
+      <!-- Submissions go to Formspree, then to sarah@stellarmarketingstudio.co.uk -->
+      <form name="first-look" id="first-look-form" action="https://formspree.io/f/mnjrbrdy" method="POST" onsubmit="return handleFormSubmit(event)">
+        <div class="form-row-half">
+          <div class="form-row">
+            <label class="form-label" for="cu-name">Your name</label>
+            <input class="form-input" type="text" id="cu-name" name="name" placeholder="First name" autocomplete="given-name" required />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="cu-email">Email</label>
+            <input class="form-input" type="email" id="cu-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="cu-business">Your business</label>
+          <input class="form-input" type="text" id="cu-business" name="business" placeholder="e.g. dog trainer, therapist, VA…" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="cu-platform">Where should I look?</label>
+          <select class="form-input form-select" id="cu-platform" name="platform" required>
+            <option value="" disabled selected>Pick a platform</option>
+            <option value="website">My website</option>
+            <option value="instagram">Instagram</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="facebook">Facebook page</option>
+            <option value="google">Google listing</option>
+            <option value="other">Other / not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="cu-message">Anything else? (optional)</label>
+          <textarea class="form-input form-textarea" id="cu-message" name="message" placeholder="What's nagging at you most right now?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send my request <span class="arr">→</span></button>
+        <p class="form-privacy">By sending this, you're happy for me to use your details to reply to your enquiry. Here's my <a href="privacy-policy.html">privacy policy</a>.</p>
+      </form>
+      <div id="first-look-success" style="display:none;text-align:center;padding:38px 28px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06)">
+        <div style="font-family:'Fraunces',serif;font-size:36px;color:var(--white);line-height:1">✦</div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:25px;color:var(--white);margin:16px 0 10px">Brilliant, I've got your request.</h3>
+        <p style="color:rgba(255,255,255,.75);font-size:15px;line-height:1.6">I'll be in touch to sort out your First Look slot. Talk soon :)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="l">Sarah <span class="ast">✦</span> Hetherington</div>
+    <p>© 2026 Stellar Marketing Studio. All rights reserved.</p>
+  </div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="first-look.html">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="#contact">Contact</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // FORM — submits to Formspree, no email app needed
+  function handleFormSubmit(e){
+    e.preventDefault();
+    var form = e.target;
+    var name = document.getElementById('cu-name').value.trim();
+    var btn = form.querySelector('.form-submit');
+    var data = new FormData(form);
+    data.set('_subject', 'First Look request - ' + name);
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        form.style.display = 'none';
+        document.getElementById('first-look-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = 'Send my request <span class="arr">→</span>';
+        alert('Sorry, something went wrong sending that. Please try again, or email me directly at sarah@stellarmarketingstudio.co.uk');
+      }
+    }).catch(function(){
+      btn.disabled = false;
+      btn.innerHTML = 'Send my request <span class="arr">→</span>';
+      alert('Sorry, something went wrong sending that. Please try again, or email me directly at sarah@stellarmarketingstudio.co.uk');
+    });
+    return false;
+  }
+</script>
+<script>
+(function(){
+  var hamburger=document.getElementById('hamburger');
+  var mobileNav=document.getElementById('mobileNav');
+  if(!hamburger||!mobileNav)return;
+  window.closeMobileNav=function(){
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow='';
+  };
+  hamburger.addEventListener('click',function(){
+    if(mobileNav.classList.contains('open')){window.closeMobileNav();}
+    else{hamburger.classList.add('open');mobileNav.classList.add('open');document.body.style.overflow='hidden';}
+  });
+  mobileNav.querySelectorAll('.m-link').forEach(function(link){
+    link.addEventListener('click',window.closeMobileNav);
+  });
+})();
+</script>
+</body>
+</html>

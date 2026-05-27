@@ -3,24 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Marketing MOT, Sarah Hetherington</title>
+<title>The Marketing MOT | Stellar Marketing Studio</title>
 <meta name="description" content="A proper look at your business and your marketing, plus a written guide you can keep. Stop guessing and start sounding like yourself. £495.">
+<link rel="canonical" href="https://stellarmarketingstudio.co.uk/mot.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stellar Marketing Studio">
+<meta property="og:title" content="The Marketing MOT | Stellar Marketing Studio">
+<meta property="og:description" content="A proper look at your business and your marketing, plus a written guide you can keep. £495, and it comes off if we work together after.">
+<meta property="og:url" content="https://stellarmarketingstudio.co.uk/mot.html">
+<meta property="og:image" content="images/sarah-portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Marketing MOT | Stellar Marketing Studio">
+<meta name="twitter:description" content="A proper look at your business and your marketing, plus a written guide you can keep. £495, and it comes off if we work together after.">
+<meta name="twitter:image" content="images/sarah-portrait.jpg">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   strong{font-weight:inherit!important}
   :root{--navy:#001846;--navy-deep:#001236;--paper:#faf6ec;--cream:#f1e8d2;--stone:#e7dec5;--grey:#6a6a6a}
   html,body{background:var(--paper);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
   ::selection{background:var(--navy);color:var(--paper)}
   .page{width:100%;background:var(--paper);position:relative;overflow:hidden}
   .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
-
-  /* CUSTOM CURSOR */
-  #cursor{position:fixed;pointer-events:none;z-index:9999;font-size:1.4rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:transform .1s ease}
-  .cursor-trail{position:fixed;pointer-events:none;z-index:9998;font-size:.75rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);opacity:0}
 
   .sparkles{position:absolute;pointer-events:none;line-height:1;z-index:1}
   .sparkles span{position:absolute;display:inline-block;color:var(--navy);font-family:'Fraunces',serif;font-weight:300;animation:twinkle 3.6s ease-in-out infinite}
@@ -39,22 +46,13 @@
   .nav-links .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
 
   /* HERO */
-  .hero{padding:80px 56px 96px;border-bottom:1px solid var(--navy);position:relative;overflow:hidden}
-  .hero-meta{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--navy);padding-bottom:14px;margin-bottom:48px}
-  .hero-meta span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--navy)}
-  h1.bigtype{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.035em;line-height:.95;font-size:clamp(48px,7.5vw,104px);color:var(--navy);margin:0;max-width:1100px}
-  h1.bigtype em{font-style:normal;font-weight:300;color:var(--navy)}
-  h1.bigtype strong,h2 strong,h3 strong,.problem-row .t strong{font-weight:400;font-style:normal}
-  .hero-foot{display:grid;grid-template-columns:1fr auto;gap:48px;margin-top:56px;border-top:1px solid var(--navy);padding-top:28px;align-items:end}
-  .hero-foot .lede{font-family:'Fraunces',serif;font-size:24px;line-height:1.4;font-weight:400;letter-spacing:-.005em;color:var(--navy);max-width:680px}
-  .hero-foot .lede em{font-style:normal;color:var(--navy)}
-  .hero .sparkles{top:40px;right:40px;width:280px;height:240px}
-  .hero .sparkles .a1{top:30px;left:120px;font-size:128px}
-  .hero .sparkles .a2{top:0;left:50px;font-size:34px}
-  .hero .sparkles .a3{top:160px;left:30px;font-size:22px}
-  .hero .sparkles .a4{top:185px;left:200px;font-size:48px}
-  .hero .sparkles .a5{top:8px;left:240px;font-size:18px}
-  .hero .sparkles .a6{top:130px;left:255px;font-size:14px}
+  .hero{background:var(--paper);color:var(--navy);position:relative;overflow:hidden;border-bottom:1px solid var(--navy);padding:96px 80px 144px}
+  .hero-meta{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--navy);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:200px}
+  .hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(56px,9vw,128px);line-height:.95;letter-spacing:-.035em;color:var(--navy);margin:0;max-width:1000px}
+  .hero-lede{font-family:'Fraunces',serif;font-size:clamp(18px,2.2vw,24px);line-height:1.45;font-weight:400;color:var(--navy);max-width:580px;margin-top:80px;letter-spacing:-.005em}
+  .hero-cta-row{margin-top:64px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+  .ast-accent{position:absolute;font-family:'Fraunces',serif;font-weight:300;line-height:1;animation:twinkle 4s ease-in-out infinite;pointer-events:none;top:140px;right:140px;font-size:32px;color:var(--navy);opacity:.55}
+  h2 strong,h3 strong,.problem-row .t strong{font-weight:400;font-style:normal}
   .pill-cta{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--paper);padding:14px 24px;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--navy);transition:background .2s,color .2s;cursor:pointer;font-family:inherit}
   .pill-cta:hover{background:var(--navy-deep);color:var(--paper)}
   .pill-cta .arr{font-family:'Fraunces',serif;font-size:16px;color:var(--paper)}
@@ -218,9 +216,7 @@
   footer p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
 
   /* FIRST LOOK NUDGES */
-  .hero-cta{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
-  .hero-sub-link{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(0,24,70,.35);padding-bottom:2px;letter-spacing:.02em;transition:border-color .2s}
-  .hero-sub-link:hover{border-color:var(--navy)}
+  .hero-sub-link{font-size:13px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;font-weight:600;letter-spacing:.02em}
   .fl-strip{display:block;padding:18px 56px;background:var(--navy);color:var(--paper);text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--navy);text-decoration:none;transition:background .2s}
   .fl-strip:hover{background:var(--navy-deep)}
   .fl-strip .ast{color:var(--stone);margin:0 12px}
@@ -240,11 +236,13 @@
   .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
   .mobile-nav .m-link.active,.mobile-nav .m-link:hover{opacity:1}
   .mobile-nav .m-btn{margin-top:8px}
+  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;transition:background .2s,border-color .2s}
+  .mobile-nav .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep);opacity:1}
 
   /* MEET SARAH */
   .meet{padding:120px 56px;background:var(--stone);border-bottom:1px solid var(--navy);position:relative}
   .meet-grid{display:grid;grid-template-columns:.85fr 1fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto}
-  .meet-portrait{aspect-ratio:4/5;background-size:cover;background-position:top center;background-image:url('https://i.postimg.cc/mZzL1H1K/Sarah-and-Emma-Sep-2024-(54-of-120)-(1)-Medium.jpg');width:100%;border:1px solid var(--navy)}
+  .meet-portrait{aspect-ratio:4/5;background-size:cover;background-position:top center;background-image:url('images/sarah-portrait.jpg');width:100%;border:1px solid var(--navy)}
   .meet-r .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:14px}
   .meet-r h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(36px,4.5vw,60px);line-height:1.05;letter-spacing:-.02em;color:var(--navy);margin-bottom:20px}
   .meet-r h2 em{font-style:normal;color:var(--navy)}
@@ -254,17 +252,18 @@
 
   @media (max-width:900px){
     nav{padding:16px 24px}
-    .hero-meta{display:none}
-    .hero .sparkles{width:130px;height:130px;top:10px;right:6px}
-    .hero .sparkles .a1{font-size:58px;top:16px;left:30px}
-    .hero .sparkles .a2,.hero .sparkles .a3,.hero .sparkles .a4,.hero .sparkles .a5,.hero .sparkles .a6{display:none}
     .nav-links{display:none}
     .hamburger{display:flex}
-    .hero,.meet,.testi,.problem,.mot-breakdown,.cost,.hiw,.pippa,.gofurther,.faq-sec,.bottom-cta{padding:64px 24px}
+    .hero{padding:56px 24px 80px}
+    .hero h1{font-size:clamp(42px,13vw,56px)}
+    .hero-meta{margin-bottom:96px;font-size:10px}
+    .ast-accent{top:64px;right:24px;font-size:22px}
+    .hero-lede{margin-top:40px}
+    .hero-cta-row{margin-top:36px}
+    .meet,.testi,.problem,.mot-breakdown,.cost,.hiw,.pippa,.gofurther,.faq-sec,.bottom-cta{padding:64px 24px}
     .meet-grid{grid-template-columns:1fr;gap:32px}
     .meet-portrait{aspect-ratio:4/5}
-    h1.bigtype{font-size:clamp(42px,13vw,56px)}
-    .hero-foot,.testi-grid,.cost-grid,.gf-grid,.pippa-grid,.bottom-cta .row{grid-template-columns:1fr;gap:32px}
+    .testi-grid,.cost-grid,.gf-grid,.pippa-grid,.bottom-cta .row{grid-template-columns:1fr;gap:32px}
     .problem-row,.mb-row{grid-template-columns:1fr;gap:18px}
     .problem-head h2,.mb-head h2,.cost-l h2,.hiw-head h2,.gf-l h2,.faq-sec h2,.bottom-cta h2{font-size:48px}
     .testi-photo,.pippa-photo{margin:0 auto;width:160px;height:160px}
@@ -277,20 +276,45 @@
     .hiw-card:last-child{border-bottom:none}
     .faq-q{font-size:18px;grid-template-columns:50px 1fr auto}
     .faq-a,.faq-a.open{padding-left:50px;padding-right:0}
-    .hero-cta{align-items:flex-start}
     .fl-strip{padding:16px 24px}
     footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
-    #cursor,.cursor-trail{display:none}
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reviews-marquee-track { animation: none !important; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Marketing MOT",
+  "description": "A proper look at your business and your marketing, plus a written guide you can keep.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Stellar Marketing Studio",
+    "url": "https://stellarmarketingstudio.co.uk/"
+  },
+  "areaServed": "United Kingdom",
+  "offers": {
+    "@type": "Offer",
+    "price": "495",
+    "priceCurrency": "GBP"
+  }
+}
+</script>
 </head>
 <body>
-<div id="cursor">✦</div>
 <nav>
   <a href="index.html" class="wm">Sarah <sup class="ast">✦</sup> Hetherington</a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="check-up.html">The First Look</a>
+    <a href="first-look.html">The First Look</a>
     <a href="mot.html" class="active">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="#contact" class="pill">Chat with me ↗</a>
@@ -299,7 +323,7 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html" class="m-link">Home</a>
-  <a href="check-up.html" class="m-link">The First Look</a>
+  <a href="first-look.html" class="m-link">The First Look</a>
   <a href="mot.html" class="m-link active">The Marketing MOT</a>
   <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
   <a href="#contact" class="pill m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
@@ -309,25 +333,16 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="sparkles">
-    <span class="a1">✦</span>
-    <span class="a2 lite" style="animation-delay:.5s;animation-name:twinkleSlow">✧</span>
-    <span class="a3" style="animation-delay:1.1s">✶</span>
-    <span class="a4 lite" style="animation-delay:.7s">✦</span>
-    <span class="a5 dim" style="animation-delay:1.4s">⋆</span>
-    <span class="a6" style="animation-delay:.3s">✷</span>
-  </div>
   <div class="hero-meta">
     <span>Stellar Marketing Studio</span>
-    <span>The Marketing MOT &nbsp;/&nbsp; £495 &nbsp;/&nbsp; 60 mins</span>
+    <span>The Marketing MOT / £495 / 60 mins</span>
   </div>
-  <h1 class="bigtype">The right clients are already looking for you. They just don't know <strong>you're the one</strong> yet.</h1>
-  <div class="hero-foot">
-    <p class="lede">The clients who never haggle, never drain you, and refer everyone they know. They're out there. They just need to be able to <strong>recognise you're the one</strong> for them.</p>
-    <div class="hero-cta">
-      <a href="#contact" class="pill-cta pill-cta--filled">Book your MOT <span class="arr">→</span></a>
-      <a href="check-up.html" class="hero-sub-link">Not sure yet? Start with a free First Look →</a>
-    </div>
+  <span class="ast-accent">✦</span>
+  <h1>The right clients are looking. They don't know it's you yet.</h1>
+  <p class="hero-lede">The clients who never haggle, never drain you, and refer everyone they know. They're out there. They just need to be able to recognise you're the one for them.</p>
+  <div class="hero-cta-row">
+    <a href="#contact" class="pill-cta pill-cta--filled">Book your MOT <span class="arr">→</span></a>
+    <a href="first-look.html" class="hero-sub-link">Not sure yet? Start with a free First Look →</a>
   </div>
 </section>
 
@@ -340,9 +355,9 @@
     <span class="a4 lite" style="animation-delay:.7s">⋆</span>
   </div>
   <div class="testi-grid">
-    <div class="testi-photo" style="background-image:url('https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg')"></div>
+    <div class="testi-photo" style="background-image:url('images/laura.jpg')"></div>
     <div class="testi-r">
-      <div class="stars">★★★★★</div>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
       <blockquote>"<strong>Sarah really listened</strong>, not just to what I wanted the site to look like, but to who I am and what I wanted my business to say. I always felt reassured that she <strong>understood what I wanted, even when I wasn't sure myself.</strong>"</blockquote>
       <div class="who"><span class="name">Laura Heslop</span><span class="biz">Laura Heslop Therapy</span></div>
     </div>
@@ -382,14 +397,14 @@
     <div class="meet-portrait"></div>
     <div class="meet-r">
       <h2>Before we go any further, <em>hello.</em> I'm Sarah.</h2>
-      <p>I've spent 8 years in marketing, and since going it alone, worked with loads of women who are brilliant at what they do. What they needed was someone to help them work out their gold dust first, the thing that makes them the obvious choice.</p>
+      <p>I've spent 8 years in marketing, and these days I help women business owners look and sound like themselves online, rather than like everyone else in their field. What they need is someone to help them work out their 'gold dust' first, the thing that makes them the obvious choice.</p>
       <p><strong>That's what the MOT is for.</strong> A proper look at you, so the right people read your marketing and think "I have to work with her."</p>
     </div>
   </div>
 </section>
 
 <!-- FIRST LOOK STRIP -->
-<a href="check-up.html" class="fl-strip"><span class="ast">✦</span> New here? The First Look is free, and a lovely place to start <span class="arr">→</span></a>
+<a href="first-look.html" class="fl-strip"><span class="ast">✦</span> New here? The First Look is free, and a lovely place to start <span class="arr">→</span></a>
 
 <!-- MOT BREAKDOWN -->
 <section class="mot-breakdown">
@@ -446,7 +461,7 @@
     <div class="cost-r">
       <p>That covers the conversation, the audit, and your written guide, everything you need to get clear on what makes you different and how to say it.</p>
       <div class="highlight">If we go on to work together on anything after, your website, your social, or a bigger marketing project, <strong>the £495 comes straight off the total.</strong> It's not an extra cost on top. It becomes part of what you've already invested.</div>
-      <p class="cost-note">Not ready to commit to the MOT? <a href="check-up.html">Dip a toe in for free first with the First Look →</a></p>
+      <p class="cost-note">Not ready to commit to the MOT? <a href="first-look.html">Dip a toe in for free first with the First Look →</a></p>
     </div>
   </div>
 </section>
@@ -454,9 +469,9 @@
 <!-- PIPPA -->
 <section class="pippa">
   <div class="pippa-grid">
-    <div class="pippa-photo" style="background-image:url('https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg')"></div>
+    <div class="pippa-photo" style="background-image:url('images/pippa.jpg')"></div>
     <div class="pippa-r">
-      <div class="stars">★★★★★</div>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
       <blockquote>"I didn't want a redesign that felt generic or not 'me'. Sarah took the time to get to know me and my clients so she could <strong>capture what I'm about.</strong>"</blockquote>
       <div class="who"><span class="name">Pippa</span><span class="biz">Pippa's Pooches</span></div>
     </div>
@@ -500,7 +515,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)"><span class="num">Q.05</span><span>Is this right for me if I'm just starting out?</span><span class="ico">+</span></button>
-      <div class="faq-a">If you've been going for six months or more and have some clients coming in but feel like something's not quite clicking, yes. If you're in the very first weeks and still figuring out what you're offering, it's probably too soon, the conversation is more useful once you've got something to build on. If you're not sure where you sit, the free <a href="check-up.html" style="color:var(--navy);font-weight:700;">First Look</a> is a lovely way to test the water first.</div>
+      <div class="faq-a">If you've been going for six months or more and have some clients coming in but feel like something's not quite clicking, yes. If you're in the very first weeks and still figuring out what you're offering, it's probably too soon, the conversation is more useful once you've got something to build on. If you're not sure where you sit, the free <a href="first-look.html" style="color:var(--navy);font-weight:700;">First Look</a> is a lovely way to test the water first.</div>
     </div>
   </div>
 </section>
@@ -535,7 +550,7 @@
   </div>
   <div>
     <a href="index.html">Home</a>
-    <a href="check-up.html">The First Look</a>
+    <a href="first-look.html">The First Look</a>
     <a href="mot.html">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="#contact">Contact</a>
@@ -568,36 +583,6 @@ function openWhatsApp(){
   window.open('https://wa.me/447457403576?text='+m,'_blank');
 }
 document.getElementById('wa-name').addEventListener('keypress',function(e){if(e.key==='Enter')openWhatsApp();});
-</script>
-<script>
-(function(){
-  var cursorEl=document.getElementById('cursor');
-  if(!cursorEl)return;
-  var NUM_TRAIL=10,trailEls=[];
-  for(var i=0;i<NUM_TRAIL;i++){
-    var el=document.createElement('div');el.className='cursor-trail';el.textContent='✦';
-    document.body.appendChild(el);trailEls.push({el:el});
-  }
-  var mouseX=-100,mouseY=-100,histArr=[],last=0;
-  for(var j=0;j<NUM_TRAIL+1;j++)histArr.push({x:-100,y:-100});
-  document.addEventListener('mousemove',function(e){
-    mouseX=e.clientX;mouseY=e.clientY;
-    cursorEl.style.left=mouseX+'px';cursorEl.style.top=mouseY+'px';
-  });
-  function animateTrail(t){
-    if(t-last>30){
-      histArr.unshift({x:mouseX,y:mouseY});histArr.pop();last=t;
-      trailEls.forEach(function(trail,idx){
-        var pos=histArr[idx+1]||histArr[histArr.length-1];
-        trail.el.style.left=pos.x+'px';trail.el.style.top=pos.y+'px';
-        trail.el.style.opacity=(1-idx/NUM_TRAIL)*0.6;
-        trail.el.style.transform='translate(-50%,-50%) scale('+(1-(idx/NUM_TRAIL)*0.6)+')';
-      });
-    }
-    requestAnimationFrame(animateTrail);
-  }
-  requestAnimationFrame(animateTrail);
-})();
 </script>
 <script>
 (function(){

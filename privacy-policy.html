@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy, Sarah Hetherington</title>
+<title>Privacy Policy | Stellar Marketing Studio</title>
 <meta name="description" content="How Stellar Marketing Studio collects, uses and looks after your personal information.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   strong{font-weight:inherit!important}
   :root{--navy:#001846;--navy-deep:#001236;--paper:#faf6ec;--cream:#f1e8d2;--stone:#e7dec5;--grey:#6a6a6a;--white:#ffffff}
   html,body{background:var(--paper);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
@@ -17,10 +17,6 @@
   .page{width:100%;background:var(--paper);position:relative;overflow:hidden}
   .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
   a{color:inherit}
-
-  /* CUSTOM CURSOR */
-  #cursor{position:fixed;pointer-events:none;z-index:9999;font-size:1.4rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:transform .1s ease}
-  .cursor-trail{position:fixed;pointer-events:none;z-index:9998;font-size:.75rem;color:white;mix-blend-mode:difference;transform:translate(-50%,-50%);opacity:0}
 
   nav{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:var(--paper);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000}
   .wm{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:6px}
@@ -41,6 +37,8 @@
   .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
   .mobile-nav .m-link:hover{opacity:1}
   .mobile-nav .m-btn{margin-top:8px}
+  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;transition:background .2s,border-color .2s}
+  .mobile-nav .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep);opacity:1}
 
   /* HEADER */
   .policy-hero{padding:80px 56px 56px;border-bottom:1px solid var(--navy)}
@@ -76,17 +74,15 @@
     .policy-hero{padding:56px 24px 40px}
     .policy{padding:48px 24px 72px}
     footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
-    #cursor,.cursor-trail{display:none}
   }
 </style>
 </head>
 <body>
-<div id="cursor">✦</div>
 <nav>
   <a href="index.html" class="wm">Sarah <sup class="ast">✦</sup> Hetherington</a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="check-up.html">The First Look</a>
+    <a href="first-look.html">The First Look</a>
     <a href="mot.html">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="index.html#contact" class="pill">Chat with me ↗</a>
@@ -95,7 +91,7 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html" class="m-link">Home</a>
-  <a href="check-up.html" class="m-link">The First Look</a>
+  <a href="first-look.html" class="m-link">The First Look</a>
   <a href="mot.html" class="m-link">The Marketing MOT</a>
   <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
   <a href="index.html#contact" class="pill m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
@@ -181,7 +177,7 @@
   </div>
   <div>
     <a href="index.html">Home</a>
-    <a href="check-up.html">The First Look</a>
+    <a href="first-look.html">The First Look</a>
     <a href="mot.html">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="index.html#contact">Contact</a>
@@ -192,34 +188,6 @@
 </div>
 
 <script>
-(function(){
-  var cursorEl=document.getElementById('cursor');
-  if(!cursorEl)return;
-  var NUM_TRAIL=10,trailEls=[];
-  for(var i=0;i<NUM_TRAIL;i++){
-    var el=document.createElement('div');el.className='cursor-trail';el.textContent='✦';
-    document.body.appendChild(el);trailEls.push({el:el});
-  }
-  var mouseX=-100,mouseY=-100,histArr=[],last=0;
-  for(var j=0;j<NUM_TRAIL+1;j++)histArr.push({x:-100,y:-100});
-  document.addEventListener('mousemove',function(e){
-    mouseX=e.clientX;mouseY=e.clientY;
-    cursorEl.style.left=mouseX+'px';cursorEl.style.top=mouseY+'px';
-  });
-  function animateTrail(t){
-    if(t-last>30){
-      histArr.unshift({x:mouseX,y:mouseY});histArr.pop();last=t;
-      trailEls.forEach(function(trail,idx){
-        var pos=histArr[idx+1]||histArr[histArr.length-1];
-        trail.el.style.left=pos.x+'px';trail.el.style.top=pos.y+'px';
-        trail.el.style.opacity=(1-idx/NUM_TRAIL)*0.6;
-        trail.el.style.transform='translate(-50%,-50%) scale('+(1-(idx/NUM_TRAIL)*0.6)+')';
-      });
-    }
-    requestAnimationFrame(animateTrail);
-  }
-  requestAnimationFrame(animateTrail);
-})();
 (function(){
   var hamburger=document.getElementById('hamburger');
   var mobileNav=document.getElementById('mobileNav');

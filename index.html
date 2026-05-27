@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stellar Marketing Studio, Sarah Hetherington</title>
+<title>Marketing that makes you the obvious choice | Stellar Marketing Studio</title>
 <meta name="description" content="Marketing built around who you are. I help women business owners become the one their ideal clients can't ignore. Book a free First Look.">
+<link rel="canonical" href="https://stellarmarketingstudio.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stellar Marketing Studio">
+<meta property="og:title" content="Marketing that makes you the obvious choice | Stellar Marketing Studio">
+<meta property="og:description" content="Marketing built around who you are. I help women business owners become the one their ideal clients can't ignore. Book a free First Look.">
+<meta property="og:url" content="https://stellarmarketingstudio.co.uk/">
+<meta property="og:image" content="images/sarah-portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marketing that makes you the obvious choice | Stellar Marketing Studio">
+<meta name="twitter:description" content="Marketing built around who you are. I help women business owners become the one their ideal clients can't ignore. Book a free First Look.">
+<meta name="twitter:image" content="images/sarah-portrait.jpg">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   strong { font-weight: inherit !important; }
 
   :root {
@@ -34,10 +45,6 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* ===== CUSTOM CURSOR ===== */
-  #cursor { position: fixed; pointer-events: none; z-index: 9999; font-size: 1.4rem; color: white; mix-blend-mode: difference; transform: translate(-50%, -50%); transition: transform 0.1s ease; }
-  .cursor-trail { position: fixed; pointer-events: none; z-index: 9998; font-size: 0.75rem; color: white; mix-blend-mode: difference; transform: translate(-50%, -50%); opacity: 0; }
 
   /* ===== SPARKLES ===== */
   @keyframes twinkle {
@@ -87,39 +94,12 @@
   .btn:hover { background: var(--navy-deep); border-color: var(--navy-deep); color: var(--cream); }
 
   /* ===== HERO ===== */
-  .hero {
-    padding: 72px 60px 88px;
-    border-bottom: 1px solid var(--navy);
-    position: relative; overflow: hidden;
-    background: var(--cream);
-  }
-  .hero-meta {
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid var(--navy); padding-bottom: 14px; margin-bottom: 48px;
-  }
-  .hero-meta span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--navy); }
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 7.5vw, 104px);
-    font-weight: 300; color: var(--navy);
-    line-height: 0.95; letter-spacing: -0.035em;
-    margin-bottom: 0; position: relative; z-index: 2;
-    max-width: 1100px;
-  }
-  h1 strong { font-weight: 400; font-style: normal; }
-  .hero-foot {
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 48px; margin-top: 56px;
-    border-top: 1px solid var(--navy); padding-top: 28px;
-    align-items: end; position: relative; z-index: 2;
-  }
-  .hero-lede {
-    font-family: 'Fraunces', serif; font-size: 24px;
-    line-height: 1.4; font-weight: 400;
-    color: var(--navy); max-width: 680px;
-    letter-spacing: -0.005em;
-  }
-  .hero-lede em { font-style: normal; color: var(--navy); }
+  .hero { background: var(--cream); color: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid var(--navy); padding: 80px 80px 120px; }
+  .hero-meta { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--navy); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--navy); margin-bottom: 160px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(56px, 9vw, 128px); line-height: 0.95; letter-spacing: -0.035em; color: var(--navy); margin: 0; max-width: 1000px; }
+  .hero-lede { font-family: 'Fraunces', serif; font-size: clamp(18px, 2.2vw, 24px); line-height: 1.45; font-weight: 400; color: var(--navy); max-width: 560px; margin-top: 64px; letter-spacing: -0.005em; }
+  .hero-cta-row { margin-top: 48px; }
+  .ast-accent { position: absolute; font-family: 'Fraunces', serif; font-weight: 300; line-height: 1; animation: twinkle 4s ease-in-out infinite; pointer-events: none; top: 120px; right: 120px; font-size: 28px; color: var(--navy); opacity: 0.55; }
   .pill-cta {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--navy); color: var(--cream);
@@ -130,28 +110,6 @@
   }
   .pill-cta:hover { background: var(--navy-deep); color: var(--cream); }
   .pill-cta .arr { font-family: 'Fraunces', serif; font-size: 16px; color: var(--cream); }
-  /* hero sparkle cluster */
-  .hero .sparkle-cluster { top: 40px; right: 40px; width: 260px; height: 220px; }
-  .hero .sparkle-cluster .a1 { top: 24px; left: 110px; font-size: clamp(80px, 10vw, 118px); }
-  .hero .sparkle-cluster .a2 { top: 0;   left: 40px;  font-size: 28px; animation-delay: .5s; animation-name: twinkleSlow; }
-  .hero .sparkle-cluster .a3 { top: 150px; left: 20px; font-size: 18px; animation-delay: 1.1s; }
-  .hero .sparkle-cluster .a4 { top: 165px; left: 180px; font-size: 40px; animation-delay: .7s; }
-  .hero .sparkle-cluster .a5 { top: 6px; left: 220px; font-size: 14px; animation-delay: 1.4s; }
-
-  /* ===== CHIPS BAR ===== */
-  .chips-bar {
-    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
-    padding: 44px 60px; background: var(--navy);
-    border-bottom: 1px solid var(--navy);
-  }
-  .chip {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 22px; border: 1px solid rgba(255,255,255,0.4);
-    color: var(--cream); font-family: 'Fraunces', serif;
-    font-style: normal; font-size: clamp(15px, 1.8vw, 20px); font-weight: 300;
-    letter-spacing: -0.005em; border-radius: 100px;
-  }
-  .chip .ast { color: var(--stone); font-style: normal; font-size: 14px; }
 
   /* ===== WORKING WITH ME ===== */
   .wtm-section {
@@ -167,7 +125,7 @@
   .wtm-l h2 em { font-style: normal; color: var(--navy); }
   .wtm-portrait {
     aspect-ratio: 4 / 5; background-size: cover; background-position: top center;
-    background-image: url("https://i.postimg.cc/mZzL1H1K/Sarah-and-Emma-Sep-2024-(54-of-120)-(1)-Medium.jpg");
+    background-image: url("images/sarah-portrait.jpg");
     width: 100%; border: 1px solid var(--navy);
   }
   .wtm-r { padding-top: 24px; }
@@ -273,29 +231,13 @@
   .slider-section h2 em { font-style: normal; color: var(--navy); font-weight: 300; }
   .slider-sub { font-size: 15px; color: var(--navy); opacity: 0.65; margin-bottom: 36px; font-weight: 600; letter-spacing: 0.04em; }
   .morph-wrap { max-width: 960px; margin: 0 auto; }
-  .morph-slider-row { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
-  .morph-state-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; flex-shrink: 0; width: 60px; }
-  .morph-state-label.lbl-before { color: #9ca3af; text-align: right; }
-  .morph-state-label.lbl-after  { color: var(--navy); text-align: left; }
-  input[type="range"].morph-range {
-    flex: 1; -webkit-appearance: none; appearance: none;
-    height: 3px; background: linear-gradient(to right, var(--warm-dark) 0%, var(--navy) 100%);
-    outline: none; cursor: pointer; border-radius: 0;
-  }
-  input[type="range"].morph-range::-webkit-slider-thumb {
-    -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
-    background: var(--navy); cursor: grab; border: 3px solid var(--cream);
-    box-shadow: 0 2px 10px rgba(0,24,70,0.25);
-  }
-  input[type="range"].morph-range:active::-webkit-slider-thumb { cursor: grabbing; }
-  .morph-hint { text-align: center; margin: 6px 0 24px; font-size: 12px; color: var(--navy); opacity: 0.55; letter-spacing: 0.04em; }
   .morph { border: 1px solid var(--navy); text-align: left; }
   .morph-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--navy); }
   .morph-row:last-child { border-bottom: none; }
   .morph-cell { padding: 20px 24px; font-size: 16px; line-height: 1.55; transition: color 0.35s ease, font-weight 0.35s ease; }
   .morph-cell.head { padding: 16px 24px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
-  .morph-cell.b { background: var(--warm-dark); color: #6b7280; }
-  .morph-cell.b.head { color: var(--navy); }
+  .morph-cell.b { background: var(--warm-dark); color: #9ca3af; text-decoration: line-through; text-decoration-color: rgba(180,150,150,0.7); }
+  .morph-cell.b.head { color: var(--navy); text-decoration: none; }
   .morph-cell.a { background: var(--navy); color: var(--cream); border-left: 1px solid var(--navy); font-family: 'Nunito Sans', sans-serif; font-weight: 400; }
   .morph-cell.a.head { background: var(--navy); color: var(--cream); }
   .morph-cell.a em { font-style: normal; font-weight: inherit; color: var(--cream); }
@@ -447,13 +389,12 @@
     nav > .btn { display: none; }
     .hamburger { display: flex; }
     .nav-links { display: none; }
-    .hero { padding: 48px 20px 56px; }
-    h1 { font-size: clamp(42px, 13vw, 56px); }
-    .hero-meta { display: none; }
-    .hero-foot { grid-template-columns: 1fr; gap: 24px; }
-    .hero .sparkle-cluster { width: 120px; height: 120px; top: 12px; right: 12px; }
-    .hero .sparkle-cluster .a1 { font-size: 56px; top: 12px; left: 40px; }
-    .chips-bar { padding: 32px 20px; }
+    .hero { padding: 48px 24px 64px; }
+    .hero h1 { font-size: clamp(42px, 13vw, 56px); }
+    .hero-meta { margin-bottom: 80px; font-size: 10px; }
+    .ast-accent { top: 60px; right: 24px; font-size: 22px; }
+    .hero-lede { margin-top: 36px; }
+    .hero-cta-row { margin-top: 32px; }
     .wtm-section { padding: 64px 20px; }
     .wtm-grid { grid-template-columns: 1fr; gap: 36px; }
     .wtm-l h2 { font-size: clamp(36px, 7vw, 56px); }
@@ -464,7 +405,6 @@
     .proof-grid { grid-template-columns: 1fr; }
     .slider-section { padding: 64px 20px; }
     .slider-section h2 { font-size: 44px; }
-    .morph-slider-row, .morph-hint { display: none; }
     .morph { border: none; }
     .morph-row { grid-template-columns: 1fr; border: 1px solid var(--navy); margin-bottom: 16px; }
     .morph-row:first-child { display: none; }
@@ -490,22 +430,47 @@
     .wa-btn { text-align: center; }
     footer { flex-direction: column; align-items: flex-start; gap: 16px; padding: 28px 20px; }
     .footer-links { flex-wrap: wrap; gap: 16px; }
-    #cursor, .cursor-trail { display: none; }
     .reviews-section-head { padding: 0 20px 32px; }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reviews-marquee-track { animation: none !important; }
+  }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Stellar Marketing Studio",
+  "alternateName": "Sarah Hetherington",
+  "description": "Marketing built around who you are. Helping women business owners become the one their ideal clients can't ignore.",
+  "url": "https://stellarmarketingstudio.co.uk/",
+  "image": "images/sarah-portrait.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Sarah Hetherington"
+  },
+  "email": "sarah@stellarmarketingstudio.co.uk",
+  "areaServed": "United Kingdom",
+  "priceRange": "££",
+  "serviceType": ["Marketing strategy", "Website design", "Social media content", "Email marketing"]
+}
+</script>
 </head>
 <body>
-
-<div id="cursor">✦</div>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="wordmark">Sarah <span class="wm-star">✦</span> Hetherington</a>
   <div class="nav-links">
     <a href="index.html" class="nav-link active">Home</a>
-    <a href="check-up.html" class="nav-link">The First Look</a>
+    <a href="first-look.html" class="nav-link">The First Look</a>
     <a href="mot.html" class="nav-link">The Marketing MOT</a>
     <a href="built-to-be-booked.html" class="nav-link">Built to Be Booked</a>
     <a href="#contact" class="btn">Chat with me ↗</a>
@@ -514,50 +479,42 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html" class="m-link active">Home</a>
-  <a href="check-up.html" class="m-link">The First Look</a>
+  <a href="first-look.html" class="m-link">The First Look</a>
   <a href="mot.html" class="m-link">The Marketing MOT</a>
   <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
   <a href="#contact" class="btn m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
 </div>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="sparkle-cluster">
-    <span class="a1">✦</span>
-    <span class="a2 lite">✧</span>
-    <span class="a3">✶</span>
-    <span class="a4 lite">✦</span>
-    <span class="a5 dim">⋆</span>
-  </div>
+<section class="hero">
   <div class="hero-meta">
     <span>Stellar Marketing Studio</span>
-    <span>Strategy &nbsp;/&nbsp; Story &nbsp;/&nbsp; Soul</span>
+    <span>Strategy / Story / Soul</span>
   </div>
-  <h1>Marketing that makes people think <strong>"I have to work with her."</strong></h1>
-  <div class="hero-foot">
-    <p class="hero-lede">Built around who you are and who you want to work with.</p>
-    <a href="check-up.html" class="pill-cta">Book a free First Look <span class="arr">→</span></a>
-  </div>
-</div>
+  <span class="ast-accent">✦</span>
+  <h1>Marketing that makes you the obvious choice.</h1>
+  <p class="hero-lede">Built around who you are and who you want to work with.</p>
+  <div class="hero-cta-row"><a href="first-look.html" class="pill-cta">Book a free First Look <span class="arr">→</span></a></div>
+</section>
 
 <!-- PROOF STRIP -->
 <div class="proof-strip">
   <div class="proof-grid">
     <div class="proof-card">
-      <div class="proof-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div>
-      <div class="proof-stars">★★★★★</div>
+      <div class="proof-photo"><img src="images/pippa.jpg" alt="Pippa from Pippa's Pooches dog training, with her dog Artemis"></div>
+      <div class="proof-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <p class="proof-quote-text">"<strong>150% month-on-month increase in enquiries</strong> and several new clients happy to join a 2+ month waiting list purely from reading my website."</p>
       <div class="proof-who"><span style="color:var(--navy)">Pippa</span><span>Pippa's Pooches</span></div>
     </div>
     <div class="proof-card">
-      <div class="proof-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie &amp; Helen"></div>
-      <div class="proof-stars">★★★★★</div>
+      <div class="proof-photo"><img src="images/katie-helen.jpg" alt="Katie and Helen from K&H Mortgages"></div>
+      <div class="proof-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <p class="proof-quote-text">"She <strong>captured our work ethic and personalities perfectly.</strong> From the very first conversation, she completely understood what we wanted."</p>
       <div class="proof-who"><span style="color:var(--navy)">Katie &amp; Helen</span><span>K&amp;H Mortgages</span></div>
     </div>
     <div class="proof-card">
-      <div class="proof-photo"><img src="https://i.postimg.cc/tT7JvP3V/Natalie-Selfie-in-car.jpg" alt="Natalie"></div>
-      <div class="proof-stars">★★★★★</div>
+      <div class="proof-photo"><img src="images/natalie.jpg" alt="Natalie from Shore HR consultancy"></div>
+      <div class="proof-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <p class="proof-quote-text">"My following has grown and <strong>this has converted to new clients.</strong> Sarah always brings new ideas, fresh thinking and understands what's working well and not so well."</p>
       <div class="proof-who"><span style="color:var(--navy)">Natalie</span><span>Shore HR</span></div>
     </div>
@@ -578,7 +535,7 @@
       <p>It's not that you're not trying or haven't got a brilliant business. It's that nobody's helped you figure out your 'gold dust' first, the thing that makes you stand out. And the reason it's hard to find on your own is that you can't see yourself the way someone else does. <strong>That's what I'm for.</strong></p>
       <div class="wtm-small-note">Several of my clients have filled waiting lists, raised their prices and turned away work they didn't want - all from changing how they position themselves.</div>
       <div class="wtm-cta-row">
-        <a href="check-up.html" class="pill-cta">Book a free First Look <span class="arr">→</span></a>
+        <a href="first-look.html" class="pill-cta">Book a free First Look <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -589,12 +546,6 @@
   <h2>From invisible<br>to <em>inevitable.</em></h2>
   <p class="slider-sub">Where you might be right now, and where my clients end up.</p>
   <div class="morph-wrap">
-    <div class="morph-slider-row">
-      <span class="morph-state-label lbl-before">Before</span>
-      <input type="range" class="morph-range" id="morphRange" min="0" max="100" value="0">
-      <span class="morph-state-label lbl-after">After</span>
-    </div>
-    <p class="morph-hint">Drag the slider to watch things change ✦</p>
     <div class="morph">
       <div class="morph-row">
         <div class="morph-cell b head">Right now</div>
@@ -642,7 +593,7 @@
       </div>
       <div class="right">
         <div class="price">Free</div>
-        <a href="check-up.html" class="more">See full details →</a>
+        <a href="first-look.html" class="more">See full details →</a>
       </div>
     </div>
     <div class="offer-row">
@@ -728,60 +679,60 @@
   <div class="reviews-marquee-wrap">
     <div class="reviews-marquee-track">
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg" alt="Laura"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/laura.jpg" alt="Laura Heslop from Laura Heslop Therapy"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
         <p class="review-quote">"Sarah really listened, not just to what I wanted the site to look like, but <strong>to who I am.</strong> She created a website that feels like a true reflection of me. I'm so proud of it."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/pippa.jpg" alt="Pippa from Pippa's Pooches dog training, with her dog Artemis"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
         <p class="review-quote">"<strong>150% month-on-month increase in enquiries</strong> since launch, and several new clients happy to join a 2+ month waiting list purely on the basis of reading my website."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/YjBCTY36/ITC-Tutor-Claire.jpg" alt="Claire"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/claire.jpg" alt="Claire from Ilkeston Tuition Centre"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
         <p class="review-quote">"She changed things in a way <strong>I had not even considered.</strong> We've had way more interest and a huge increase in online bookings."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie &amp; Helen"></div><div class="reviewer-info"><strong>Katie &amp; Helen</strong><span>K and H Mortgages</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/katie-helen.jpg" alt="Katie and Helen from K&H Mortgages"></div><div class="reviewer-info"><strong>Katie &amp; Helen</strong><span>K and H Mortgages</span></div></div>
         <p class="review-quote">"From our first interaction we knew she completely understood us. She has <strong>captured our work ethic and personalities perfectly.</strong> Cannot recommend her enough."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/kgd2H31L/WCA-About-Helen-and-Arnold.jpg" alt="Helen"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/helen-arnold.jpg" alt="Helen from Wainwright's Canine Academy with her dog Arnold"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
         <p class="review-quote">"It's only been a couple of weeks and I'm <strong>already getting more traffic and enquiries.</strong> It felt so nice knowing my website was in safe hands."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/h4zNGfcP/adele-cross-aesthetics-nurse.png" alt="Adele"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/adele.png" alt="Adele from AC Nurse Aesthetics"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
         <p class="review-quote">"She took the time to truly understand my business goals, and delivered something that <strong>truly reflected them.</strong>"</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/tT7JvP3V/Natalie-Selfie-in-car.jpg" alt="Natalie"></div><div class="reviewer-info"><strong>Natalie</strong><span>Shore HR</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/natalie.jpg" alt="Natalie from Shore HR consultancy"></div><div class="reviewer-info"><strong>Natalie</strong><span>Shore HR</span></div></div>
         <p class="review-quote">"Sarah always brings new ideas, fresh thinking and understands what's working well and not so well. My following has grown and <strong>this has converted to new clients.</strong>"</p>
       </div>
       <!-- duplicate for infinite loop -->
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/zX2dw7xY/Laura-Heslop-headshot.jpg" alt="Laura"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/laura.jpg" alt="Laura Heslop from Laura Heslop Therapy"></div><div class="reviewer-info"><strong>Laura</strong><span>Laura Heslop Therapy</span></div></div>
         <p class="review-quote">"Sarah really listened, not just to what I wanted the site to look like, but <strong>to who I am.</strong> She created a website that feels like a true reflection of me. I'm so proud of it."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/90Wxbn3F/Pippa-and-Artemis-portrait.jpg" alt="Pippa"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/pippa.jpg" alt="Pippa from Pippa's Pooches dog training, with her dog Artemis"></div><div class="reviewer-info"><strong>Pippa</strong><span>Pippa's Pooches</span></div></div>
         <p class="review-quote">"<strong>150% month-on-month increase in enquiries</strong> since launch, and several new clients happy to join a 2+ month waiting list purely on the basis of reading my website."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/YjBCTY36/ITC-Tutor-Claire.jpg" alt="Claire"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/claire.jpg" alt="Claire from Ilkeston Tuition Centre"></div><div class="reviewer-info"><strong>Claire</strong><span>Ilkeston Tuition Centre</span></div></div>
         <p class="review-quote">"She changed things in a way <strong>I had not even considered.</strong> We've had way more interest and a huge increase in online bookings."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/d0VVMq8T/K-and-H-Mortgages-Home-Hero.jpg" alt="Katie &amp; Helen"></div><div class="reviewer-info"><strong>Katie &amp; Helen</strong><span>K and H Mortgages</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/katie-helen.jpg" alt="Katie and Helen from K&H Mortgages"></div><div class="reviewer-info"><strong>Katie &amp; Helen</strong><span>K and H Mortgages</span></div></div>
         <p class="review-quote">"From our first interaction we knew she completely understood us. She has <strong>captured our work ethic and personalities perfectly.</strong> Cannot recommend her enough."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/kgd2H31L/WCA-About-Helen-and-Arnold.jpg" alt="Helen"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/helen-arnold.jpg" alt="Helen from Wainwright's Canine Academy with her dog Arnold"></div><div class="reviewer-info"><strong>Helen</strong><span>Wainwright's Canine Academy</span></div></div>
         <p class="review-quote">"It's only been a couple of weeks and I'm <strong>already getting more traffic and enquiries.</strong> It felt so nice knowing my website was in safe hands."</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/h4zNGfcP/adele-cross-aesthetics-nurse.png" alt="Adele"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/adele.png" alt="Adele from AC Nurse Aesthetics"></div><div class="reviewer-info"><strong>Adele</strong><span>AC Nurse Aesthetics</span></div></div>
         <p class="review-quote">"She took the time to truly understand my business goals, and delivered something that <strong>truly reflected them.</strong>"</p>
       </div>
       <div class="review-card">
-        <div class="review-header"><div class="reviewer-photo"><img src="https://i.postimg.cc/tT7JvP3V/Natalie-Selfie-in-car.jpg" alt="Natalie"></div><div class="reviewer-info"><strong>Natalie</strong><span>Shore HR</span></div></div>
+        <div class="review-header"><div class="reviewer-photo"><img src="images/natalie.jpg" alt="Natalie from Shore HR consultancy"></div><div class="reviewer-info"><strong>Natalie</strong><span>Shore HR</span></div></div>
         <p class="review-quote">"Sarah always brings new ideas, fresh thinking and understands what's working well and not so well. My following has grown and <strong>this has converted to new clients.</strong>"</p>
       </div>
     </div>
@@ -830,7 +781,7 @@
         <span class="faq-q-text">I don't know where to start.</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">If you want a quick expert view on where you stand, start with the free <a href="check-up.html" style="color:var(--navy);font-weight:700;">First Look</a>. Either way, I'll tell you honestly what I think.</div>
+      <div class="faq-answer">If you want a quick expert view on where you stand, start with the free <a href="first-look.html" style="color:var(--navy);font-weight:700;">First Look</a>. Either way, I'll tell you honestly what I think.</div>
     </div>
   </div>
 </div>
@@ -847,7 +798,7 @@
   </div>
   <h2>Let's make<br>you <em>inevitable.</em></h2>
   <div class="cta-row">
-    <p>The best place to start is a free <a href="check-up.html" style="color:var(--stone);text-decoration:underline;text-underline-offset:2px;">First Look</a>. 30 minutes, no pressure, and you leave with three things to act on. Or if you've got a question first, pop your name below and I'll come back to you.</p>
+    <p>The best place to start is a free <a href="first-look.html" style="color:var(--stone);text-decoration:underline;text-underline-offset:2px;">First Look</a>. 30 minutes, no pressure, and you leave with three things to act on. Or if you've got a question first, pop your name below and I'll come back to you.</p>
     <div class="wa-wrap">
       <div class="wa-input-row">
         <input type="text" id="wa-name" class="wa-input" placeholder="Your name…" autocomplete="given-name" />
@@ -866,7 +817,7 @@
   </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
-    <a href="check-up.html">The First Look</a>
+    <a href="first-look.html">The First Look</a>
     <a href="mot.html">The Marketing MOT</a>
     <a href="built-to-be-booked.html">Built to Be Booked</a>
     <a href="#contact">Contact</a>
@@ -900,57 +851,6 @@ document.getElementById('wa-name').addEventListener('keypress', function(e) {
   if (e.key === 'Enter') openWhatsApp();
 });
 </script>
-<script>
-(function() {
-  var range = document.getElementById('morphRange');
-  var count = 4;
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function lerpRGB(a, b, t) {
-    return 'rgb(' + Math.round(lerp(a[0],b[0],t)) + ',' + Math.round(lerp(a[1],b[1],t)) + ',' + Math.round(lerp(a[2],b[2],t)) + ')';
-  }
-  function applyMorph(val) {
-    var t = val / 100;
-    for (var i = 0; i < count; i++) {
-      var before = document.getElementById('mb' + i);
-      before.style.color = lerpRGB([107,114,128],[185,178,168], t);
-      before.style.textDecoration = t > 0.1 ? 'line-through' : 'none';
-      before.style.textDecorationColor = 'rgba(180,150,150,' + Math.min(1, t * 2.5) + ')';
-    }
-  }
-  if (!window.matchMedia('(max-width:900px)').matches) {
-    range.addEventListener('input', function() { applyMorph(this.value); });
-    applyMorph(0);
-  }
-})();
-</script>
-<script>
-var cursorEl = document.getElementById('cursor');
-var NUM_TRAIL = 10; var trailEls = [];
-for (var i = 0; i < NUM_TRAIL; i++) {
-  var el = document.createElement('div'); el.className = 'cursor-trail'; el.textContent = '✦';
-  document.body.appendChild(el); trailEls.push({ el: el, x: -100, y: -100 });
-}
-var mouseX = -100, mouseY = -100, histArr = [], last = 0;
-for (var j = 0; j < NUM_TRAIL + 1; j++) histArr.push({ x: -100, y: -100 });
-document.addEventListener('mousemove', function(e) {
-  mouseX = e.clientX; mouseY = e.clientY;
-  cursorEl.style.left = mouseX + 'px'; cursorEl.style.top = mouseY + 'px';
-});
-function animateTrail(t) {
-  if (t - last > 30) {
-    histArr.unshift({ x: mouseX, y: mouseY }); histArr.pop(); last = t;
-    trailEls.forEach(function(trail, idx) {
-      var pos = histArr[idx + 1] || histArr[histArr.length - 1];
-      trail.el.style.left = pos.x + 'px'; trail.el.style.top = pos.y + 'px';
-      trail.el.style.opacity = (1 - idx / NUM_TRAIL) * 0.6;
-      trail.el.style.transform = 'translate(-50%,-50%) scale(' + (1 - (idx / NUM_TRAIL) * 0.6) + ')';
-    });
-  }
-  requestAnimationFrame(animateTrail);
-}
-requestAnimationFrame(animateTrail);
-</script>
-
 <script>
 var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobileNav');
