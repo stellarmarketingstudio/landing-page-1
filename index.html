@@ -225,49 +225,28 @@
   .slider-section { padding: 120px 60px; background: var(--cream); border-bottom: 1px solid var(--navy); text-align: center; }
   .slider-section h2 {
     font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(56px, 10vw, 128px); line-height: 0.9;
-    letter-spacing: -0.035em; color: var(--navy); margin-bottom: 10px;
+    font-size: clamp(44px, 7vw, 88px); line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--navy); margin-bottom: 18px;
   }
   .slider-section h2 em { font-style: normal; color: var(--navy); font-weight: 300; }
-  .slider-sub { font-size: 15px; color: var(--navy); opacity: 0.65; margin-bottom: 36px; font-weight: 600; letter-spacing: 0.04em; }
+  .slider-sub { font-size: 18px; color: var(--navy); opacity: 0.7; margin-bottom: 48px; font-weight: 400; letter-spacing: 0; font-family: 'Nunito Sans', sans-serif; }
   .morph-wrap { max-width: 960px; margin: 0 auto; }
   .morph { border: 1px solid var(--navy); text-align: left; }
   .morph-row { display: grid; grid-template-columns: 1fr 1fr; }
-  .morph-cell { padding: 26px 32px; line-height: 1.55; }
-  .morph-cell.head {
-    padding: 20px 32px; font-size: 11px; letter-spacing: 0.22em;
-    text-transform: uppercase; font-weight: 700;
-    display: flex; align-items: center; gap: 10px;
-    border-bottom: 1px solid var(--navy);
-  }
+  .morph-cell { padding: 26px 32px; line-height: 1.65; font-family: 'Nunito Sans', sans-serif; font-size: 16px; }
+  .morph-cell.head, .morph-cell.a.head { font-weight: 700; padding-top: 22px; padding-bottom: 22px; }
   .morph-cell.b {
     background: var(--warm-dark);
     color: rgba(0,24,70,0.55);
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 15px; line-height: 1.65;
     border-top: 1px solid rgba(0,24,70,0.18);
   }
-  .morph-cell.b.head { color: rgba(0,24,70,0.55); border-top: none; }
-  .morph-cell.b.head .mark {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--navy); opacity: 0.35;
-  }
+  .morph-row:first-child .morph-cell { border-top: none; border-bottom: 1px solid var(--navy); }
   .morph-cell.a {
     background: var(--cream);
     color: var(--navy);
     border-left: 1px solid var(--navy);
     border-top: 1px solid rgba(0,24,70,0.18);
-    font-family: 'Fraunces', serif; font-weight: 400;
-    font-size: 20px; line-height: 1.4; letter-spacing: -0.01em;
-  }
-  .morph-cell.a.head {
-    color: var(--navy);
-    font-family: 'Nunito Sans', sans-serif;
-    border-top: none;
-  }
-  .morph-cell.a.head .mark {
-    font-family: 'Fraunces', serif; font-size: 14px;
-    color: var(--navy); line-height: 1;
+    font-weight: 500;
   }
   .morph-cell.a em { font-style: normal; font-weight: inherit; color: var(--navy); }
 
@@ -442,16 +421,12 @@
     }
     .morph-row:first-child { display: none; }
     .morph-row:last-child { margin-bottom: 0; }
-    .morph-cell { padding: 20px 22px; }
+    .morph-cell { padding: 20px 22px; font-size: 15px; }
     .morph-cell.a {
       border-left: none;
       border-top: 1px solid var(--navy);
-      font-size: 18px;
     }
-    .morph-cell.b {
-      border-top: none;
-      font-size: 14px;
-    }
+    .morph-cell.b { border-top: none; }
     .morph-cell.b::before {
       content: 'Right now';
       display: block;
@@ -605,8 +580,8 @@
   <div class="morph-wrap">
     <div class="morph">
       <div class="morph-row">
-        <div class="morph-cell b head"><span class="mark"></span>Right now</div>
-        <div class="morph-cell a head"><span class="mark">✦</span>Working with me</div>
+        <div class="morph-cell b head">Right now</div>
+        <div class="morph-cell a head">Working with me</div>
       </div>
       <div class="morph-row">
         <div class="morph-cell b">You're at a networking event and someone asks for your LinkedIn. You hand it over and spend the drive home hoping they don't judge you by what they find.</div>
