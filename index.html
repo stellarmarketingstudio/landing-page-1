@@ -232,15 +232,44 @@
   .slider-sub { font-size: 15px; color: var(--navy); opacity: 0.65; margin-bottom: 36px; font-weight: 600; letter-spacing: 0.04em; }
   .morph-wrap { max-width: 960px; margin: 0 auto; }
   .morph { border: 1px solid var(--navy); text-align: left; }
-  .morph-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--navy); }
-  .morph-row:last-child { border-bottom: none; }
-  .morph-cell { padding: 20px 24px; font-size: 16px; line-height: 1.55; transition: color 0.35s ease, font-weight 0.35s ease; }
-  .morph-cell.head { padding: 16px 24px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
-  .morph-cell.b { background: var(--warm-dark); color: #4b5563; text-decoration: line-through; text-decoration-color: rgba(140,90,90,0.45); text-decoration-thickness: 1px; }
-  .morph-cell.b.head { color: var(--navy); text-decoration: none; }
-  .morph-cell.a { background: var(--navy); color: var(--cream); border-left: 1px solid var(--navy); font-family: 'Nunito Sans', sans-serif; font-weight: 400; }
-  .morph-cell.a.head { background: var(--navy); color: var(--cream); }
-  .morph-cell.a em { font-style: normal; font-weight: inherit; color: var(--cream); }
+  .morph-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .morph-cell { padding: 26px 32px; line-height: 1.55; }
+  .morph-cell.head {
+    padding: 20px 32px; font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--navy);
+  }
+  .morph-cell.b {
+    background: var(--warm-dark);
+    color: rgba(0,24,70,0.55);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px; line-height: 1.65;
+    border-top: 1px solid rgba(0,24,70,0.18);
+  }
+  .morph-cell.b.head { color: rgba(0,24,70,0.55); border-top: none; }
+  .morph-cell.b.head .mark {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--navy); opacity: 0.35;
+  }
+  .morph-cell.a {
+    background: var(--cream);
+    color: var(--navy);
+    border-left: 1px solid var(--navy);
+    border-top: 1px solid rgba(0,24,70,0.18);
+    font-family: 'Fraunces', serif; font-weight: 400;
+    font-size: 20px; line-height: 1.4; letter-spacing: -0.01em;
+  }
+  .morph-cell.a.head {
+    color: var(--navy);
+    font-family: 'Nunito Sans', sans-serif;
+    border-top: none;
+  }
+  .morph-cell.a.head .mark {
+    font-family: 'Fraunces', serif; font-size: 14px;
+    color: var(--navy); line-height: 1;
+  }
+  .morph-cell.a em { font-style: normal; font-weight: inherit; color: var(--navy); }
 
   /* ===== THIS IS FOR YOU IF ===== */
   .forif-section { background: var(--navy); padding: 120px 60px; border-bottom: 1px solid var(--navy); position: relative; overflow: hidden; }
@@ -406,13 +435,41 @@
     .slider-section { padding: 64px 20px; }
     .slider-section h2 { font-size: 44px; }
     .morph { border: none; }
-    .morph-row { grid-template-columns: 1fr; border: 1px solid var(--navy); margin-bottom: 16px; }
+    .morph-row {
+      grid-template-columns: 1fr;
+      border: 1px solid var(--navy);
+      margin-bottom: 16px;
+    }
     .morph-row:first-child { display: none; }
-    .morph-row:last-child { margin-bottom: 0; border-bottom: 1px solid var(--navy); }
-    .morph-cell { padding: 16px 18px; }
-    .morph-cell.a { border-left: none; border-top: 1px solid var(--navy); }
-    .morph-cell.b::before { content: 'Right now'; display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #9ca3af; margin-bottom: 8px; }
-    .morph-cell.a::before { content: 'Working with me'; display: block; color: var(--cream); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+    .morph-row:last-child { margin-bottom: 0; }
+    .morph-cell { padding: 20px 22px; }
+    .morph-cell.a {
+      border-left: none;
+      border-top: 1px solid var(--navy);
+      font-size: 18px;
+    }
+    .morph-cell.b {
+      border-top: none;
+      font-size: 14px;
+    }
+    .morph-cell.b::before {
+      content: 'Right now';
+      display: block;
+      font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; font-weight: 700;
+      color: rgba(0,24,70,0.55);
+      margin-bottom: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    .morph-cell.a::before {
+      content: '✦  Working with me';
+      display: block;
+      color: var(--navy);
+      font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+    }
     .forif-section { padding: 72px 20px; }
     .forif-list .item { grid-template-columns: 52px 1fr auto; gap: 16px; padding: 24px 0; }
     .forif-list .item .n { font-size: 26px; }
@@ -548,24 +605,24 @@
   <div class="morph-wrap">
     <div class="morph">
       <div class="morph-row">
-        <div class="morph-cell b head">Right now</div>
-        <div class="morph-cell a head">Working with me</div>
+        <div class="morph-cell b head"><span class="mark"></span>Right now</div>
+        <div class="morph-cell a head"><span class="mark">✦</span>Working with me</div>
       </div>
       <div class="morph-row">
-        <div class="morph-cell b" id="mb0">You're at a networking event and someone asks for your LinkedIn. You hand it over and spend the drive home hoping they don't judge you by what they find.</div>
-        <div class="morph-cell a" id="ma0">You hand it over <em>knowing</em> it'll do the talking for you.</div>
+        <div class="morph-cell b">You're at a networking event and someone asks for your LinkedIn. You hand it over and spend the drive home hoping they don't judge you by what they find.</div>
+        <div class="morph-cell a">You hand it over knowing it'll do the talking for you.</div>
       </div>
       <div class="morph-row">
-        <div class="morph-cell b" id="mb1">You sit down on a Sunday to write some posts, and an hour and a half later you've got one draft you're not even sure about.</div>
-        <div class="morph-cell a" id="ma1">Someone messages you out of nowhere saying they've been following you for a while and think you're <em>exactly who they need.</em></div>
+        <div class="morph-cell b">You sit down on a Sunday to write some posts, and an hour and a half later you've got one draft you're not even sure about.</div>
+        <div class="morph-cell a">Someone messages you out of nowhere saying they've been following you for a while and think you're exactly who they need.</div>
       </div>
       <div class="morph-row">
-        <div class="morph-cell b" id="mb2">Someone enquires, you put time into a proposal, and they come back asking whether you can do it any cheaper.</div>
-        <div class="morph-cell a" id="ma2">A call where the price is never an issue. They'd <em>already decided</em> you were worth it before they even got in touch.</div>
+        <div class="morph-cell b">Someone enquires, you put time into a proposal, and they come back asking whether you can do it any cheaper.</div>
+        <div class="morph-cell a">A call where the price is never an issue. They'd already decided you were worth it before they even got in touch.</div>
       </div>
       <div class="morph-row">
-        <div class="morph-cell b" id="mb3">You send a quote and spend the next three days wondering whether it was your website they looked at before they went quiet.</div>
-        <div class="morph-cell a" id="ma3">You send a quote at your full rate without changing the number, <em>without a second thought.</em></div>
+        <div class="morph-cell b">You send a quote and spend the next three days wondering whether it was your website they looked at before they went quiet.</div>
+        <div class="morph-cell a">You send a quote at your full rate without changing the number, without a second thought.</div>
       </div>
     </div>
   </div>
