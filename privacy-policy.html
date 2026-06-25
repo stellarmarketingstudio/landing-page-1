@@ -76,6 +76,15 @@
     footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
   }
 </style>
+    <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni ji pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_ojmSUSDdscWpKyy8WgV8x4Zumi3yiKmHpwqB6fj6Adks', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        opt_out_capturing_by_default: true, // wait for cookie consent before tracking
+    })
+</script>
 </head>
 <body>
 <nav>
@@ -204,6 +213,32 @@
   mobileNav.querySelectorAll('.m-link').forEach(function(link){
     link.addEventListener('click',window.closeMobileNav);
   });
+})();
+</script>
+<!-- Cookie consent banner -->
+<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:440px;margin:0 auto;background:#001846;color:#faf6ec;padding:20px 22px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.25);font-family:inherit;z-index:99999;">
+  <p style="margin:0 0 14px;font-size:14px;line-height:1.5;">I use cookies to see how people get on with my site, so I can keep making it better. Happy for me to switch them on?</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button id="cookie-accept" style="flex:1;min-width:120px;cursor:pointer;border:0;border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;background:#faf6ec;color:#001846;">Yes, that's fine</button>
+    <button id="cookie-decline" style="flex:1;min-width:120px;cursor:pointer;border:1px solid rgba(250,246,236,.4);border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;background:transparent;color:#faf6ec;">No thanks</button>
+  </div>
+  <a href="privacy-policy.html" style="display:inline-block;margin-top:12px;font-size:12px;color:#e7dec5;text-decoration:underline;">See my privacy policy</a>
+</div>
+<script>
+(function(){
+  var KEY='sms_cookie_consent';
+  var banner=document.getElementById('cookie-consent');
+  var choice=null;
+  try{choice=localStorage.getItem(KEY);}catch(e){}
+  function start(){if(window.posthog&&posthog.opt_in_capturing){posthog.opt_in_capturing();}}
+  function stop(){if(window.posthog&&posthog.opt_out_capturing){posthog.opt_out_capturing();}}
+  if(choice==='accepted'){start();}
+  else if(choice==='declined'){stop();}
+  else if(banner){banner.style.display='block';}
+  var a=document.getElementById('cookie-accept');
+  var d=document.getElementById('cookie-decline');
+  if(a){a.addEventListener('click',function(){try{localStorage.setItem(KEY,'accepted');}catch(e){}start();banner.style.display='none';});}
+  if(d){d.addEventListener('click',function(){try{localStorage.setItem(KEY,'declined');}catch(e){}stop();banner.style.display='none';});}
 })();
 </script>
 </body>
