@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Sarah | Stellar Marketing Studio</title>
+<meta name="description" content="The story of what I do, and who I do it for. I'm Sarah, the person behind Stellar Marketing Studio. I help women business owners become the one their clients can't ignore.">
+<link rel="canonical" href="https://stellarmarketingstudio.co.uk/meet-sarah.html">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Stellar Marketing Studio">
+<meta property="og:title" content="Meet Sarah | Stellar Marketing Studio">
+<meta property="og:description" content="The story of what I do, and who I do it for. The person behind the marketing.">
+<meta property="og:url" content="https://stellarmarketingstudio.co.uk/meet-sarah.html">
+<meta property="og:image" content="images/sarah-portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meet Sarah | Stellar Marketing Studio">
+<meta name="twitter:description" content="The story of what I do, and who I do it for. The person behind the marketing.">
+<meta name="twitter:image" content="images/sarah-portrait.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  strong{font-weight:inherit!important}
+  
+  html,body{background:var(--base);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--navy);color:var(--base)}
+  .page{width:100%;background:var(--base);position:relative;overflow:hidden}
+  .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
+  a{color:inherit}
+
+  /* SPARKLES */
+  .sparkles{position:absolute;pointer-events:none;line-height:1;z-index:1}
+  .sparkles span{position:absolute;display:inline-block;color:var(--navy);font-family:'Fraunces',serif;font-weight:300;animation:twinkle 3.6s ease-in-out infinite;will-change:transform,opacity}
+  .sparkles span.lite{color:var(--mid-grey)}
+  .sparkles span.dim{opacity:.35}
+  
+  
+
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);background:var(--base);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000;gap:24px}
+  .wm{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:6px;flex-shrink:0}
+  .wm .ast{font-size:18px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em}
+  .nav-links a:hover{opacity:.7}
+  .nav-links a.active{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+  .nav-links .pill{border:1px solid var(--navy);padding:8px 16px;border-radius:0;background:var(--navy);color:var(--base);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s, color .2s;white-space:nowrap}
+  .nav-links .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep);opacity:1}
+
+  /* HERO */
+  .hero{background:var(--base);color:var(--navy);position:relative;overflow:hidden;border-bottom:1px solid var(--navy);padding:72px var(--gutter) 88px}
+  .hero-meta{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--navy);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:72px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end}
+  .hero h1{font-family:'Fraunces',serif;font-weight: 500;font-size:clamp(46px,6vw,96px);line-height:.95;letter-spacing:-.035em;color:var(--navy);margin:0}
+  .hero h1 .it{display:block;font-style:italic;font-weight:300;margin-top:.12em}
+  .hero-lede{font-family:'Fraunces',serif;font-size:clamp(18px,2.2vw,24px);line-height:1.45;font-weight:400;color:var(--navy);max-width:520px;margin-top:40px;letter-spacing:-.005em}
+  .hero-portrait{aspect-ratio:4/5;width:100%;border:1px solid var(--navy);background:var(--panel) url('images/sarah-portrait.jpg') center top/cover}
+
+  /* READ / ARTICLE */
+  .read{padding:var(--section-y) var(--gutter);background:var(--base);border-bottom:1px solid var(--navy)}
+  .read-col{max-width:740px;margin:0 auto}
+  .movement{margin-bottom:54px}
+  .movement:last-child{margin-bottom:0}
+  .lead{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.14;letter-spacing:-.02em;color:var(--navy);margin-bottom:20px}
+  .movement p{font-size:18px;line-height:1.85;color:var(--body);margin-bottom:18px}
+  .movement p:last-child{margin-bottom:0}
+  .movement p strong{color:var(--navy)}
+  .standfirst{font-size:21px;line-height:1.7;color:var(--navy)}
+  .aside-line{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.2;letter-spacing:-.015em;color:var(--navy);margin:64px 0;text-align:center}
+
+  /* CLOSER */
+  .closer{text-align:center;margin-top:8px}
+  .closer .small{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(20px,2.6vw,28px);color:var(--navy);margin-bottom:14px;letter-spacing:-.01em}
+  .closer .big{font-family:'Fraunces',serif;font-weight: 500;font-size:clamp(40px,7vw,84px);line-height:.98;letter-spacing:-.03em;color:var(--navy)}
+  .closer .big em{font-style:italic;font-weight:400}
+
+  /* PORTRAIT BAND */
+  .portrait-band{padding:0;background:var(--tint);border-bottom:1px solid var(--navy)}
+  .portrait-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .portrait-img{aspect-ratio:4/5;background-size:cover;background-position:top center;background-image:url('images/sarah-portrait.jpg');width:100%;border-right:1px solid var(--navy)}
+  .portrait-cap{display:flex;flex-direction:column;justify-content:center;padding:64px var(--gutter);position:relative}
+  .portrait-cap .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:18px}
+  .portrait-cap .q{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(26px,3.2vw,40px);line-height:1.18;letter-spacing:-.02em;color:var(--navy)}
+  .portrait-cap .q em{font-style:italic;font-weight:300}
+  .portrait-cap .sig{margin-top:24px;font-size:13px;letter-spacing:.04em;color:var(--mid-grey);font-style:italic}
+
+  /* PHOTO PLACEHOLDERS */
+  .ph{position:relative;border:1px solid var(--navy);background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:28px;color:var(--navy);min-height:160px}
+  .ph .gl{font-family:'Fraunces',serif;font-size:30px;line-height:1;opacity:.65}
+  .ph .lab{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.8}
+  .ph .cap{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:17px;line-height:1.3;max-width:32ch;color:var(--navy)}
+  .ph--tall{aspect-ratio:4/5}
+  .ph--sq{aspect-ratio:1/1}
+  .ph--wide{aspect-ratio:5/2}
+  .twoup{padding:96px var(--gutter);background:var(--tint);border-bottom:1px solid var(--navy)}
+  .twoup-inner{max-width:1000px;margin:0 auto}
+  .twoup .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:28px;text-align:center}
+  .twoup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .wideband{border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);background:var(--panel)}
+  .wideband .ph{border:none}
+
+  /* PULL QUOTE */
+  .pull{background:var(--navy);color:var(--base);padding:128px 56px;border-bottom:1px solid var(--navy);position:relative;overflow:hidden}
+  .pull blockquote{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,5vw,64px);line-height:1.12;letter-spacing:-.02em;color:var(--base);max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2}
+  .pull blockquote em{font-style:italic;font-weight:300;color:var(--base)}
+  .pull .sparkles{top:48px;right:7%;width:240px;height:200px;opacity:.55}
+  .pull .sparkles span{color:var(--stone)}
+  .pull .sparkles .a1{top:20px;left:100px;font-size:96px}
+  .pull .sparkles .a2{top:0;left:30px;font-size:24px;animation-delay:.6s;animation-name:twinkleSlow}
+  .pull .sparkles .a3{top:140px;left:10px;font-size:18px;animation-delay:1.2s}
+  .pull .sparkles .a4{top:155px;left:170px;font-size:38px;animation-delay:.4s}
+
+  /* VIDEO */
+  .film{padding:var(--section-y) var(--gutter);background:var(--panel);border-bottom:1px solid var(--navy)}
+  .film-head{text-align:center;margin-bottom:44px}
+  .film-head .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:14px}
+  .film-head h2{font-family:'Fraunces',serif;font-weight: 500;font-size:clamp(36px,5.4vw,64px);line-height:.98;letter-spacing:-.03em;color:var(--navy)}
+  .film-head h2 em{font-style:italic;font-weight:400}
+  .film-frame{max-width:900px;margin:0 auto;aspect-ratio:16/9;border:1px solid var(--navy);background:var(--base);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:32px}
+  .film-play{width:84px;height:84px;border:1px solid var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .film-play span{font-family:'Fraunces',serif;font-size:30px;color:var(--navy);margin-left:6px;line-height:1}
+  .film-note{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--navy)}
+  .film-sub{font-size:15px;color:var(--mid-grey);max-width:420px;line-height:1.6}
+
+  /* CTA */
+  .cta-sec{padding:var(--section-y) var(--gutter);background:var(--navy);color:var(--base);position:relative;overflow:hidden;border-bottom:1px solid var(--navy)}
+  .cta-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;max-width:1180px;margin:0 auto;position:relative;z-index:2}
+  .cta-l h2{font-family:'Fraunces',serif;font-weight: 500;font-size:clamp(52px,8vw,108px);line-height:.92;letter-spacing:-.035em;color:var(--white);margin-bottom:22px}
+  .cta-l h2 em{font-style:italic;font-weight:400;color:var(--white)}
+  .cta-l .lede{font-family:'Fraunces',serif;font-size:24px;line-height:1.35;font-weight:400;color:var(--base);max-width:460px;letter-spacing:-.005em;opacity:.92}
+  .cta-r{padding-top:14px}
+  .cta-r ul{list-style:none;padding:0;margin:0 0 30px;max-width:460px}
+  .cta-r ul li{position:relative;padding:0 0 0 28px;margin-bottom:12px;font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)}
+  .cta-r ul li:before{content:'✦';position:absolute;left:0;top:2px;color:var(--stone);font-family:'Fraunces',serif;font-size:14px}
+  .pill-cta{display:inline-flex;align-items:center;gap:10px;background:var(--base);color:var(--navy);padding:16px 28px;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--base);transition:background .2s,color .2s,border-color .2s;cursor:pointer;font-family:inherit}
+  .pill-cta:hover{background:var(--navy);color:var(--base);border-color:var(--base)}
+  .pill-cta .arr{font-family:'Fraunces',serif;font-size:16px}
+  .cta-r .alt{display:block;margin-top:18px;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none}
+  .cta-r .alt a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:2px}
+  .cta-sec .sparkles{bottom:56px;left:5%;width:200px;height:140px;opacity:.5}
+  .cta-sec .sparkles span{color:var(--base)}
+  .cta-sec .sparkles .a1{bottom:30px;left:60px;font-size:64px}
+  .cta-sec .sparkles .a2{bottom:80px;left:0;font-size:20px;animation-delay:.5s}
+  .cta-sec .sparkles .a3{bottom:0;left:130px;font-size:28px;animation-delay:1s}
+
+  /* FOOTER */
+  footer{padding:32px var(--gutter);display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);gap:24px}
+  footer a{color:rgba(255,255,255,.65);text-decoration:none;margin-left:24px;font-size:14px;transition:color .2s}
+  footer a:hover{color:var(--base)}
+  footer .l{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--base)}
+  footer p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+  footer .l .ast{font-size:14px;color:var(--white)}
+  .footer-links{display:flex;flex-wrap:wrap}
+
+  /* HAMBURGER + MOBILE NAV */
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:40px;background:none;border:1px solid var(--navy);padding:10px;flex-shrink:0}
+  .hamburger span{display:block;height:2px;background:var(--navy);transition:transform .25s ease,opacity .25s ease}
+  .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .mobile-nav{display:none;position:fixed;inset:0;background:var(--base);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+  .mobile-nav.open{display:flex}
+  .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
+  .mobile-nav .m-link.active,.mobile-nav .m-link:hover{opacity:1}
+  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--base);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;margin-top:8px;transition:background .2s,border-color .2s}
+  .mobile-nav .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
+
+  /* MOBILE */
+  @media (max-width:900px){
+    nav{padding:16px var(--gutter-m)}
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .hero{padding:48px var(--gutter-m) 56px}
+    .hero h1{font-size:clamp(40px,12vw,58px)}
+    .hero-meta{margin-bottom:40px;font-size:10px}
+    .hero-grid{grid-template-columns:1fr;gap:28px;align-items:start}
+    .hero-lede{margin-top:32px}
+    .twoup{padding:48px var(--gutter-m)}
+    .twoup-grid{grid-template-columns:1fr;gap:16px}
+    .ph--wide{aspect-ratio:4/3}
+    .read{padding:var(--section-y-m) var(--gutter-m)}
+    .movement{margin-bottom:42px}
+    .aside-line{margin:44px 0}
+    .portrait-grid{grid-template-columns:1fr}
+    .portrait-img{border-right:none;border-bottom:1px solid var(--navy);aspect-ratio:4/5}
+    .portrait-cap{padding:44px var(--gutter-m)}
+    .pull{padding:var(--section-y-m) var(--gutter-m)}
+    .pull .sparkles{display:none}
+    .film{padding:var(--section-y-m) var(--gutter-m)}
+    .film-frame{padding:24px}
+    .cta-sec{padding:var(--section-y-m) var(--gutter-m)}
+    .cta-grid{grid-template-columns:1fr;gap:36px}
+    footer{flex-direction:column;align-items:flex-start;padding:28px var(--gutter-m)}
+    .footer-links{gap:0}
+    footer a:first-child{margin-left:0}
+  }
+
+  
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Meet Sarah | Stellar Marketing Studio",
+  "url": "https://stellarmarketingstudio.co.uk/meet-sarah.html",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Sarah Hetherington",
+    "jobTitle": "Founder & Marketing Consultant",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Stellar Marketing Studio",
+      "url": "https://stellarmarketingstudio.co.uk/"
+    },
+    "image": "https://stellarmarketingstudio.co.uk/images/sarah-portrait.jpg",
+    "description": "Sarah helps women business owners become the one their ideal clients can't ignore."
+  }
+}
+</script>
+    <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni ji pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_ojmSUSDdscWpKyy8WgV8x4Zumi3yiKmHpwqB6fj6Adks', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        opt_out_capturing_by_default: true, // wait for cookie consent before tracking
+    })
+</script>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="wm">Sarah <sup class="ast">✦</sup> Hetherington</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="meet-sarah.html" class="active">Meet Sarah</a>
+    <a href="first-look.html">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="#start" class="pill">Chat with me ↗</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="m-link">Home</a>
+  <a href="meet-sarah.html" class="m-link active">Meet Sarah</a>
+  <a href="first-look.html" class="m-link">The First Look</a>
+  <a href="mot.html" class="m-link">The Marketing MOT</a>
+  <a href="built-to-be-booked.html" class="m-link">Built to Be Booked</a>
+  <a href="#start" class="pill m-btn" onclick="closeMobileNav()">Chat with me ↗</a>
+</div>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    <span>Stellar Marketing Studio</span>
+    <span>Meet Sarah / The person behind it</span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-l">
+      <h1>Anywhere's fine.<span class="it">It never is.</span></h1>
+      <p class="hero-lede">Hello, I'm Sarah. Before we get to the marketing bit, let me tell you about dinner.</p>
+    </div>
+    <div class="hero-r">
+      <div class="hero-portrait" role="img" aria-label="Portrait of Sarah Hetherington"></div>
+    </div>
+  </div>
+</section>
+
+<!-- READ: part one -->
+<section class="read">
+  <div class="read-col">
+    <div class="movement">
+      <p class="lead">It's nine o'clock on a Friday and four hungry people are waiting on me.</p>
+      <p class="standfirst">We're somewhere new, a city none of us really know, and the question has gone up: where are we eating? My phone is out. I'm six reviews deep, cross-referencing the photos against the menu against how far it is from where we're staying, and someone has just said, kindly, that they don't mind, anywhere's fine, honestly. They don't mean it. Nobody ever means it. And anyway, I mind. <strong>I always mind.</strong></p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">I'm the one who finds the restaurant.</p>
+      <p>Every trip, every group, the job lands with me and I take it more seriously than it strictly deserves. Because the gap between a fine dinner and one you're still talking about years later is usually small, and usually findable, if someone's willing to do the looking.</p>
+    </div>
+
+    <p class="aside-line">As it turns out, that's the thing I do.</p>
+
+    <div class="movement">
+      <p class="lead">Not just on holiday.</p>
+      <p>I cook for other people but almost never for myself. Tacos and ramen on request, a tiramisu if you've behaved. I take photos on a film camera and send the roll off and forget about it, then three months later an envelope lands and I get to be surprised by my own summer. On a warm evening I'll happily sit outside with a cold glass of white and watch strangers go past for an hour, quietly deciding things about them. I notice people. <strong>I always have.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- TWO-UP EDITORIAL PHOTOS -->
+<section class="twoup">
+  <div class="twoup-inner">
+    <div class="eyebrow">✦ &nbsp;A few true things</div>
+    <div class="twoup-grid">
+      <div class="ph ph--sq">
+        <div class="gl">✦</div>
+        <div class="lab">Photo</div>
+        <div class="cap">On a film camera. Out in the world, mid-summer, caught off guard.</div>
+      </div>
+      <div class="ph ph--sq">
+        <div class="gl">✦</div>
+        <div class="lab">Photo</div>
+        <div class="cap">Cooking for everyone but myself. Tacos, ramen, the odd tiramisu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- READ: part two -->
+<section class="read">
+  <div class="read-col">
+    <div class="movement">
+      <p class="lead">For a long time I noticed them on somebody else's behalf.</p>
+      <p>I spent years doing marketing inside other companies. Big ones you'd know, smaller ones you wouldn't, a startup, a university, a proper mix. I was good at it and I learned a huge amount, and the whole time there was a small, stubborn thought I kept failing to shake. I'd first had it at university, in a class about starting your own business that I sat in once and then sensibly backed away from. Get some experience first, I told myself. It was the right call. The thought just waited.</p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">What finally tipped me out on my own was a kind of irritation.</p>
+      <p>I kept looking at businesses, good ones, run by people who plainly knew their craft, and finding the same website over and over. The same stock photo of the same handshake. The same words that could have been written about anyone, by anyone. You could swap the logos and lose nothing at all. And I'd think: what is this actually for? A website that looks like everyone else's, a social account that says nothing into the void. That's not a small thing to shrug at. <strong>It's money and hours spent making yourself easier to forget.</strong></p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">Here's the part they hadn't quite clocked.</p>
+      <p>People decide about you before you ever get to open your mouth. They land on your site, they have a scroll, and somewhere in those few seconds they file you under worth it, or worth haggling with. The brilliant ones were losing that moment. Not because the business wasn't good. Because the marketing had never caught up with the person behind it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pull">
+  <div class="sparkles">
+    <span class="a1">✦</span><span class="a2">✧</span><span class="a3">✶</span><span class="a4">⋆</span>
+  </div>
+  <blockquote>People decide about you before you ever get to <em>open your mouth.</em></blockquote>
+</section>
+
+<!-- READ: part three -->
+<section class="read">
+  <div class="read-col">
+    <div class="movement">
+      <p class="lead">The people I kept wanting to help were women.</p>
+      <p>Women running small, serious businesses. Brilliant at the actual work, generous with the people they look after, and somehow talked into believing that looking professional meant looking like everybody else. There's so much of that talent going quiet for no good reason. <strong>I found I couldn't leave it alone.</strong></p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">So now I do the looking for them.</p>
+      <p>I start with a long conversation and a lot of questions, because you can't find what makes someone different by guessing at it, and you certainly can't find it in a template. I'm slow about it on purpose. I won't hand over something that's merely fine just so there's something to hand over. I take the work personally, more than is probably sensible, in the way you take personally a dinner you chose for people you love.</p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">The clients it works best with are the ones who care the way I do.</p>
+      <p>Proud of the thing they've built. A little obsessive about getting it right. We end up honest with each other, and we end up looking forward to the catch-ups, which is quietly the whole reason for working for yourself in the first place.</p>
+    </div>
+
+    <div class="movement">
+      <p class="lead">I still find the restaurant.</p>
+      <p>I'm still six reviews deep while everyone swears they don't mind. It just lands differently now I do a version of it for a living. The work, when you boil it down, is paying close attention to a person until the thing that makes them worth choosing becomes obvious. <strong>Then making sure the right people see it.</strong></p>
+    </div>
+
+    <div class="closer">
+      <p class="small">Anywhere's fine, they say.</p>
+      <p class="big">It never is. That's what <em>I'm for.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- WIDE EDITORIAL PHOTO -->
+<section class="wideband">
+  <div class="ph ph--wide">
+    <div class="gl">✦</div>
+    <div class="lab">Photo</div>
+    <div class="cap">You, mid-looking. At the desk, deep in someone else's brand.</div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="film">
+  <div class="film-head">
+    <div class="kicker">Watch / about a minute</div>
+    <h2>My story, <em>out loud.</em></h2>
+  </div>
+  <div class="film-frame">
+    <div class="film-play"><span>&#9654;</span></div>
+    <div class="film-note">Film on its way</div>
+    <p class="film-sub">A short hello, in my own voice, landing here soon. Until then, the words above will have to do the talking.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="start">
+  <div class="sparkles">
+    <span class="a1">✦</span><span class="a2">⋆</span><span class="a3">✶</span>
+  </div>
+  <div class="cta-grid">
+    <div class="cta-l">
+      <h2>A quiet way <em>to start.</em></h2>
+      <p class="lede">If you'd like one: a free First Look. No pitch, no homework, just a proper look and an honest opinion.</p>
+    </div>
+    <div class="cta-r">
+      <ul>
+        <li>Thirty minutes on a video call, nothing to prepare</li>
+        <li>I look at one of your platforms and tell you what I really see</li>
+        <li>You leave with three specific things to go and do</li>
+      </ul>
+      <a href="first-look.html" class="pill-cta">Book a free First Look <span class="arr">→</span></a>
+      <span class="alt">Or just say hello: <a href="mailto:sarah@stellarmarketingstudio.co.uk">sarah@stellarmarketingstudio.co.uk</a></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="l">Sarah <span class="ast">✦</span> Hetherington</div>
+    <p>© 2026 Stellar Marketing Studio. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="meet-sarah.html">Meet Sarah</a>
+    <a href="first-look.html">The First Look</a>
+    <a href="mot.html">The Marketing MOT</a>
+    <a href="built-to-be-booked.html">Built to Be Booked</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var hamburger=document.getElementById('hamburger');
+  var mobileNav=document.getElementById('mobileNav');
+  if(!hamburger||!mobileNav)return;
+  window.closeMobileNav=function(){
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow='';
+  };
+  hamburger.addEventListener('click',function(){
+    if(mobileNav.classList.contains('open')){window.closeMobileNav();}
+    else{hamburger.classList.add('open');mobileNav.classList.add('open');document.body.style.overflow='hidden';}
+  });
+  mobileNav.querySelectorAll('.m-link').forEach(function(link){
+    link.addEventListener('click',window.closeMobileNav);
+  });
+})();
+</script>
+<!-- Cookie consent banner -->
+<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:440px;margin:0 auto;background:#001846;color:#faf6ec;padding:20px 22px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.25);font-family:inherit;z-index:99999;">
+  <p style="margin:0 0 14px;font-size:14px;line-height:1.5;">I use cookies to see how people get on with my site, so I can keep making it better. Happy for me to switch them on?</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button id="cookie-accept" style="flex:1;min-width:120px;cursor:pointer;border:0;border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;background:#faf6ec;color:#001846;">Yes, that's fine</button>
+    <button id="cookie-decline" style="flex:1;min-width:120px;cursor:pointer;border:1px solid rgba(250,246,236,.4);border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;background:transparent;color:#faf6ec;">No thanks</button>
+  </div>
+  <a href="privacy-policy.html" style="display:inline-block;margin-top:12px;font-size:12px;color:#e7dec5;text-decoration:underline;">See my privacy policy</a>
+</div>
+<script>
+(function(){
+  var KEY='sms_cookie_consent';
+  var banner=document.getElementById('cookie-consent');
+  var choice=null;
+  try{choice=localStorage.getItem(KEY);}catch(e){}
+  function start(){if(window.posthog&&posthog.opt_in_capturing){posthog.opt_in_capturing();}}
+  function stop(){if(window.posthog&&posthog.opt_out_capturing){posthog.opt_out_capturing();}}
+  if(choice==='accepted'){start();}
+  else if(choice==='declined'){stop();}
+  else if(banner){banner.style.display='block';}
+  var a=document.getElementById('cookie-accept');
+  var d=document.getElementById('cookie-decline');
+  if(a){a.addEventListener('click',function(){try{localStorage.setItem(KEY,'accepted');}catch(e){}start();banner.style.display='none';});}
+  if(d){d.addEventListener('click',function(){try{localStorage.setItem(KEY,'declined');}catch(e){}stop();banner.style.display='none';});}
+})();
+</script>
+</body>
+</html>

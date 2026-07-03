@@ -8,22 +8,23 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   strong{font-weight:inherit!important}
-  :root{--navy:#001846;--navy-deep:#001236;--paper:#faf6ec;--cream:#f1e8d2;--stone:#e7dec5;--grey:#6a6a6a;--white:#ffffff}
-  html,body{background:var(--paper);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
-  ::selection{background:var(--navy);color:var(--paper)}
-  .page{width:100%;background:var(--paper);position:relative;overflow:hidden}
+  
+  html,body{background:var(--base);color:var(--navy);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.55}
+  ::selection{background:var(--navy);color:var(--base)}
+  .page{width:100%;background:var(--base);position:relative;overflow:hidden}
   .ast{display:inline-block;color:var(--navy);font-family:'Fraunces',serif;line-height:1}
   a{color:inherit}
 
-  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:var(--paper);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);background:var(--base);border-bottom:1px solid var(--navy);position:sticky;top:0;z-index:1000}
   .wm{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.02em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:6px}
   .wm .ast{font-size:18px}
   .nav-links{display:flex;gap:28px;align-items:center}
   .nav-links a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em}
-  .nav-links .pill{border:1px solid var(--navy);padding:8px 16px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,border-color .2s}
+  .nav-links .pill{border:1px solid var(--navy);padding:8px 16px;background:var(--navy);color:var(--base);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,border-color .2s}
   .nav-links .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
 
   /* HAMBURGER + MOBILE NAV */
@@ -32,24 +33,24 @@
   .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
   .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-  .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+  .mobile-nav{display:none;position:fixed;inset:0;background:var(--base);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
   .mobile-nav.open{display:flex}
   .mobile-nav .m-link{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em;opacity:.65;transition:opacity .2s}
   .mobile-nav .m-link:hover{opacity:1}
   .mobile-nav .m-btn{margin-top:8px}
-  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;transition:background .2s,border-color .2s}
+  .mobile-nav .pill{border:1px solid var(--navy);padding:10px 22px;background:var(--navy);color:var(--base);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:1;transition:background .2s,border-color .2s}
   .mobile-nav .pill:hover{background:var(--navy-deep);border-color:var(--navy-deep);opacity:1}
 
   /* HEADER */
-  .policy-hero{padding:80px 56px 56px;border-bottom:1px solid var(--navy)}
+  .policy-hero{padding:var(--hero-top) var(--gutter) 56px;border-bottom:1px solid var(--navy)}
   .policy-hero .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:18px}
-  .policy-hero h1{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.03em;line-height:1;font-size:clamp(48px,8vw,96px);color:var(--navy);margin-bottom:20px}
+  .policy-hero h1{font-family:'Fraunces',serif;font-weight: 500;letter-spacing:-.03em;line-height:1;font-size:clamp(48px,8vw,96px);color:var(--navy);margin-bottom:20px}
   .policy-hero p{font-size:18px;line-height:1.6;color:#1f2740;max-width:640px}
 
   /* BODY */
-  .policy{padding:64px 56px 96px}
+  .policy{padding:64px var(--gutter) 96px}
   .policy-inner{max-width:760px;margin:0 auto}
-  .policy-updated{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--grey);margin-bottom:40px}
+  .policy-updated{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mid-grey);margin-bottom:40px}
   .policy h2{font-family:'Fraunces',serif;font-weight:400;font-size:26px;line-height:1.25;letter-spacing:-.01em;color:var(--navy);margin:40px 0 14px}
   .policy h2:first-of-type{margin-top:0}
   .policy p{font-size:17px;line-height:1.75;color:#1f2740;margin-bottom:14px}
@@ -58,22 +59,22 @@
   .policy ul li::before{content:'✦';position:absolute;left:0;color:var(--navy);font-family:'Fraunces',serif;font-size:13px;top:3px}
   .policy a{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .policy strong{color:var(--navy);font-weight:700}
-  .policy .ph{background:var(--stone);padding:2px 6px;font-size:15px;font-weight:600;color:var(--navy)}
+  .policy .ph{background:var(--panel);padding:2px 6px;font-size:15px;font-weight:600;color:var(--navy)}
 
-  footer{padding:32px 56px;display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);gap:24px}
+  footer{padding:32px var(--gutter);display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);gap:24px}
   footer a{color:rgba(255,255,255,.65);text-decoration:none;margin-left:24px;font-size:14px;transition:color .2s}
-  footer a:hover{color:var(--paper)}
-  footer .l{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--paper)}
+  footer a:hover{color:var(--base)}
+  footer .l{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--base)}
   footer .l .ast{font-size:14px;color:var(--white)}
   footer p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
 
   @media (max-width:900px){
-    nav{padding:16px 24px}
+    nav{padding:16px var(--gutter-m)}
     .nav-links{display:none}
     .hamburger{display:flex}
-    .policy-hero{padding:56px 24px 40px}
-    .policy{padding:48px 24px 72px}
-    footer{flex-direction:column;align-items:flex-start;padding:28px 24px}
+    .policy-hero{padding:56px var(--gutter-m) 40px}
+    .policy{padding:48px var(--gutter-m) 72px}
+    footer{flex-direction:column;align-items:flex-start;padding:28px var(--gutter-m)}
   }
 </style>
     <script>

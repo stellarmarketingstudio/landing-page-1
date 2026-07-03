@@ -1,0 +1,63 @@
+/* ============================================================
+   Stellar Marketing Studio — shared design tokens
+   Change a value here once and every page picks it up.
+   Loaded BEFORE each page's own <style> block.
+   ============================================================ */
+
+:root {
+  /* ---- colour ---- */
+  --navy: #001846;
+  --navy-deep: #001236;
+  --base: #fcfaf4;       /* page background — "oat milk" */
+  --tint: #f8f4e8;       /* cards & tinted panels */
+  --stone: #e7dec5;      /* accent text on navy sections */
+  --panel: #f1ebdb;      /* "quiet linen" — highlight rows & tinted bands */
+  --warm-dark: #ede9e2;  /* muted panels (before/after left column) */
+  --white: #ffffff;
+  --ink: #0a0a0a;
+  --body: #1f2740;       /* long-form body text on light */
+  --text: #111827;
+  --mid-grey: #6b7280;
+  --light-grey: #e5e7eb;
+
+  /* ---- spacing (8px scale) ---- */
+  --gutter: 56px;        /* page side padding, desktop */
+  --gutter-m: 24px;      /* page side padding, mobile */
+  --section-y: 120px;    /* standard section vertical padding */
+  --section-y-m: 72px;
+  --band-y: 80px;        /* tighter bands: proof strip, marquee */
+  --band-y-m: 56px;
+  --head-gap: 48px;      /* section heading to its content */
+  --head-gap-m: 32px;
+  --hero-top: 80px;      /* hero padding above the meta line */
+  --hero-bottom: 120px;
+  --hero-drop: 160px;    /* hero meta line down to the H1 */
+}
+
+/* ---- base ---- */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--base);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- shared sparkle animation ---- */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.45; transform: scale(0.85) rotate(0deg); }
+  50%      { opacity: 1;    transform: scale(1.1) rotate(18deg); }
+}
+@keyframes twinkleSlow {
+  0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(-12deg); }
+  50%      { opacity: 0.85; transform: scale(1) rotate(8deg); }
+}
+
+/* ---- accessibility ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
